@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\BackUp\\SourceCode\\GeeksForGeeks\\DataStructure\\Arrays\\Arrays\\Arrays.csproj": {}
+    "C:\\BackUp\\Practice\\Docker\\Geeks4Geeks\\Arrays\\Arrays\\Arrays.csproj": {}
   },
   "projects": {
-    "C:\\BackUp\\SourceCode\\GeeksForGeeks\\DataStructure\\Arrays\\Arrays\\Arrays.csproj": {
+    "C:\\BackUp\\Practice\\Docker\\Geeks4Geeks\\Arrays\\Arrays\\Arrays.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\BackUp\\SourceCode\\GeeksForGeeks\\DataStructure\\Arrays\\Arrays\\Arrays.csproj",
+        "projectUniqueName": "C:\\BackUp\\Practice\\Docker\\Geeks4Geeks\\Arrays\\Arrays\\Arrays.csproj",
         "projectName": "Arrays",
-        "projectPath": "C:\\BackUp\\SourceCode\\GeeksForGeeks\\DataStructure\\Arrays\\Arrays\\Arrays.csproj",
+        "projectPath": "C:\\BackUp\\Practice\\Docker\\Geeks4Geeks\\Arrays\\Arrays\\Arrays.csproj",
         "packagesPath": "C:\\Users\\Hemant.Bhatt\\.nuget\\packages\\",
-        "outputPath": "C:\\BackUp\\SourceCode\\GeeksForGeeks\\DataStructure\\Arrays\\Arrays\\obj\\",
+        "outputPath": "C:\\BackUp\\Practice\\Docker\\Geeks4Geeks\\Arrays\\Arrays\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -27,8 +27,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://192.168.34.7:8111/guestAuth/app/nuget/v1/FeedService.svc": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://sita-pse.pkgs.visualstudio.com/_packaging/Type22/nuget/v3/index.json": {}
+          "https://sita-pse.pkgs.visualstudio.com/_packaging/Type22/nuget/v3/index.json": {},
+          "https://sita-pse.pkgs.visualstudio.com/_packaging/shared-libraries/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -52,10 +54,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
