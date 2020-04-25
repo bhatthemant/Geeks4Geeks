@@ -7,6 +7,7 @@ namespace Adobe
     {
         public int NodeValue;
         public BST Left, Right;
+        public int Weight = 1;
 
         public BST()
         {
@@ -33,10 +34,50 @@ namespace Adobe
             if (nodeValue > rootNode.NodeValue)
             {
                 rootNode.Right = Insert(rootNode.Right, nodeValue);
+                rootNode.Weight++;
             }
             else
             {
                 rootNode.Left = Insert(rootNode.Left, nodeValue);
+                rootNode.Weight++;
+            }
+
+            return rootNode;
+        }
+
+        public static BST InsertWithDistance(BST rootNode, int nodeValue, int distance)
+        {
+            return InsertWithDistance(rootNode, rootNode?.NodeValue ?? int.MinValue, nodeValue,
+                distance);
+        }
+
+        public static BST InsertWithDistance(BST rootNode, int rootNodeValue, int nodeValue, int distance)
+        {
+            if (rootNode == null)
+            {
+                if (Math.Abs(rootNodeValue - nodeValue) > distance)
+                    return new BST(nodeValue);
+                else
+                    return null;
+            }
+
+            if (nodeValue > rootNode.NodeValue)
+            {
+                var node = InsertWithDistance(rootNode.Right, rootNode.NodeValue, nodeValue, distance);
+                if (node != null)
+                {
+                    rootNode.Right = node;
+                    rootNode.Weight++;
+                }
+            }
+            else
+            {
+                var node = InsertWithDistance(rootNode.Left, rootNode.NodeValue, nodeValue, distance);
+                if (node != null)
+                {
+                    rootNode.Left = node;
+                    rootNode.Weight++;
+                }
             }
 
             return rootNode;
@@ -141,7 +182,7 @@ namespace Adobe
 
             return rootNode.NodeValue;
         }
-        
+
         public static int FindMax(BST rootNode)
         {
             while (rootNode.Right != null)

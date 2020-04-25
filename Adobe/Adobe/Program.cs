@@ -19,6 +19,20 @@ namespace Adobe
             BSTHelper.Insert(binarySearchTree, 9);
             BSTHelper.Insert(binarySearchTree, 13);
 
+            int nodeDistance = 2;
+
+            // binarySearchTree = BSTHelper.InsertWithDistance(binarySearchTree, 8, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 1, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 4, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 3, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 7, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 6, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 10, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 14, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 9, nodeDistance);
+            // BSTHelper.InsertWithDistance(binarySearchTree, 13, nodeDistance);
+
+
             //BSTHelper.Inorder(binarySearchTree);
 
             //  Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
