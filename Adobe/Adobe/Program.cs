@@ -19,16 +19,19 @@ namespace Adobe
             BSTHelper.Insert(binarySearchTree, 9);
             BSTHelper.Insert(binarySearchTree, 13);
 
-            BSTHelper.Inorder(binarySearchTree);
+            //BSTHelper.Inorder(binarySearchTree);
 
-          //  Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
-            
-          Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
-            var node = BSTHelper.SearchNode(binarySearchTree,7);
-            node.NodeValue = 11;
-            
-           // Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
-            Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
+            //  Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
+
+            // Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
+            //  var node = BSTHelper.SearchNode(binarySearchTree,7);
+            //node.NodeValue = 11;
+
+            // Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
+            //Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
+
+            Console.WriteLine($"Minimum value in BST : {BSTHelper.FindMin(binarySearchTree)}");
+            Console.WriteLine($"Maximum value in BST : {BSTHelper.FindMax(binarySearchTree)}");
         }
     }
 }

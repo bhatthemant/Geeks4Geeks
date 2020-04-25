@@ -111,7 +111,7 @@ namespace Adobe
             // For root we max int.min and int.max and compare with root value which is always true
             // After that we move to root.left child with passing the rootvalue as max value now, to check if any node has any value greater than root node
             // for its child now you have updated value for min and max from parent.
-            
+
             // Iteration flow
             // 8, int.min, int.max
             // 1,int.min, 8 | 10, 8, int.max
@@ -119,7 +119,7 @@ namespace Adobe
             // null | 3,1,4 | 7, 4, 8 | null | 13 , 10, 14 | null
             // null | null | 6, 4, 7 | null | null | null
             // null | null | null | null | null | null
-            
+
             if (rootNode == null)
                 return true;
 
@@ -130,6 +130,26 @@ namespace Adobe
             }
 
             return IsBST(rootNode.Left, min, rootNode.NodeValue) && IsBST(rootNode.Right, rootNode.NodeValue, max);
+        }
+
+        public static int FindMin(BST rootNode)
+        {
+            while (rootNode.Left != null)
+            {
+                rootNode = rootNode.Left;
+            }
+
+            return rootNode.NodeValue;
+        }
+        
+        public static int FindMax(BST rootNode)
+        {
+            while (rootNode.Right != null)
+            {
+                rootNode = rootNode.Right;
+            }
+
+            return rootNode.NodeValue;
         }
     }
 }
