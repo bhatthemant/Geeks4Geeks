@@ -104,5 +104,32 @@ namespace Adobe
 
             return true;
         }
+
+        // using min and max values
+        public static bool IsBST(BST rootNode, int min, int max)
+        {
+            // For root we max int.min and int.max and compare with root value which is always true
+            // After that we move to root.left child with passing the rootvalue as max value now, to check if any node has any value greater than root node
+            // for its child now you have updated value for min and max from parent.
+            
+            // Iteration flow
+            // 8, int.min, int.max
+            // 1,int.min, 8 | 10, 8, int.max
+            // null | 4, 1, 8 | 9, 10, int.max | 14, 10, int.max
+            // null | 3,1,4 | 7, 4, 8 | null | 13 , 10, 14 | null
+            // null | null | 6, 4, 7 | null | null | null
+            // null | null | null | null | null | null
+            
+            if (rootNode == null)
+                return true;
+
+            if (rootNode.NodeValue < min || rootNode.NodeValue > max)
+            {
+                Console.WriteLine($"Node value is : {rootNode.NodeValue} min value is : {min}  max value is : {max}");
+                return false;
+            }
+
+            return IsBST(rootNode.Left, min, rootNode.NodeValue) && IsBST(rootNode.Right, rootNode.NodeValue, max);
+        }
     }
 }

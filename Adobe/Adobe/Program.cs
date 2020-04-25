@@ -21,12 +21,14 @@ namespace Adobe
 
             BSTHelper.Inorder(binarySearchTree);
 
+          //  Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
             
-            var node = BSTHelper.SearchNode(binarySearchTree,9);
-            node.NodeValue = 15;
+          Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
+            var node = BSTHelper.SearchNode(binarySearchTree,7);
+            node.NodeValue = 11;
             
-            Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
-           // Console.WriteLine(BSTHelper.CheckForBST(binarySearchTree));
+           // Console.WriteLine(BSTHelper.CheckForBSTViaList(binarySearchTree));
+            Console.WriteLine(BSTHelper.IsBST(binarySearchTree, Int32.MinValue, Int32.MaxValue));
         }
     }
 }
