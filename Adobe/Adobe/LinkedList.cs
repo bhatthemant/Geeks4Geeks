@@ -201,10 +201,10 @@ namespace Adobe
 
             while (headNode != null)
             {
-                tempNode = headNode.Next;     // Store the next of element
-                headNode.Next = prevNode;     // Set the current node next to previous node visited
-                prevNode = headNode;          // Store current node as previous node
-                headNode = tempNode;          // Set head not head.next which was stored as temp node at step 1
+                tempNode = headNode.Next; // Store the next of element
+                headNode.Next = prevNode; // Set the current node next to previous node visited
+                prevNode = headNode; // Store current node as previous node
+                headNode = tempNode; // Set head not head.next which was stored as temp node at step 1
             }
 
             while (prevNode != null)
@@ -212,6 +212,26 @@ namespace Adobe
                 Console.WriteLine(prevNode.Data);
                 prevNode = prevNode.Next;
             }
+        }
+
+        public static bool IsPalindrome(Node headNode)
+        {
+            Queue<Node> nodeQueue = new Queue<Node>();
+            Stack<Node> nodeStack = new Stack<Node>();
+            while (headNode != null)
+            {
+                nodeQueue.Enqueue(headNode);
+                nodeStack.Push(headNode);
+                headNode = headNode.Next;
+            }
+
+            while (nodeQueue.Count > 0)
+            {
+                if ((int) nodeQueue.Dequeue().Data != (int) nodeStack.Pop().Data)
+                    return false;
+            }
+
+            return true;
         }
     }
 }
