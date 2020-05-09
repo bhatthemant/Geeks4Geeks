@@ -16,7 +16,7 @@ namespace Adobe
              5. 3 0 2 0 4 --- 7
              6. 2 0 1 --- 1
              */
-            
+
             Console.WriteLine("Enter number of use cases : ");
             int numberOfCases = int.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
 
@@ -53,6 +53,34 @@ namespace Adobe
 
                 Console.WriteLine($"Amount of trapped water : {trappedWater}");
             }
+        }
+
+        public static void MaxContigiuosArray()
+        {
+            Console.WriteLine("Enter array element : ");
+
+            string[] strInput = Console.ReadLine().Split(" ");
+            int[] inputArr = new int[strInput.Length];
+
+            for (int index = 0; index < strInput.Length; index++)
+            {
+                inputArr[index] = int.Parse(strInput[index]);
+            }
+
+            int maxValue = 0;
+            int maxValueSoFar = 0;
+
+            foreach (var item in inputArr)
+            {
+                maxValue += item;
+
+                if (maxValue < 0)
+                    maxValue = 0;
+                else if (maxValueSoFar < maxValue)
+                    maxValueSoFar = maxValue;
+            }
+
+            Console.WriteLine(maxValueSoFar);
         }
     }
 }

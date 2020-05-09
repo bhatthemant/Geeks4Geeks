@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace Adobe
@@ -7,6 +8,39 @@ namespace Adobe
     {
         static void Main(string[] args)
         {
+            // Graph
+
+            // List<GraphEdge<int>> edges = new List<GraphEdge<int>>
+            // {
+            //     new GraphEdge<int>(0, 1, 6), new GraphEdge<int>(1, 2, 7),
+            //     new GraphEdge<int>(2, 0, 5), new GraphEdge<int>(2, 1, 4),
+            //     new GraphEdge<int>(3, 2, 10)
+            // };
+
+            // GraphWithAdjList<int> graphImpl = new GraphWithAdjList<int>(edges);
+
+            List<GraphEdge<string>> edges = new List<GraphEdge<string>>
+            {
+                new GraphEdge<string>("a", "b", 6), new GraphEdge<string>("b", "c", 7),
+                new GraphEdge<string>("c", "a", 5), new GraphEdge<string>("c", "b", 4),
+                new GraphEdge<string>("d", "c", 10)
+            };
+
+            GraphWithAdjList<string> graphImpl = new GraphWithAdjList<string>(edges);
+
+            GraphWithAdjMatrix<string> graphWithAdjMatrix = new GraphWithAdjMatrix<string>();    
+            
+            var aNode = new GraphNode<string>("a", 0);
+            var bNode = new GraphNode<string>("b", 1);
+            var cNode = new GraphNode<string>("c", 2);
+            var dNode = new GraphNode<string>("d", 3);
+
+            graphWithAdjMatrix.AddEdge(aNode, bNode, 6);
+            graphWithAdjMatrix.AddEdge(bNode, cNode, 7);
+            graphWithAdjMatrix.AddEdge(cNode, aNode, 5);
+            graphWithAdjMatrix.AddEdge(cNode, bNode, 4);
+            graphWithAdjMatrix.AddEdge(dNode, cNode, 10);
+
             // BST 
 
             /*
@@ -122,7 +156,8 @@ namespace Adobe
 
 
             //Trapped Water
-            Arrays.TrappedWater();
+            //Arrays.TrappedWater();
+            //Arrays.MaxContigiuosArray();
         }
     }
 }

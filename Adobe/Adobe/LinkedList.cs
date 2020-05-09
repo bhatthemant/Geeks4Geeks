@@ -14,6 +14,11 @@ namespace Adobe
     {
         public Node Head;
 
+        public LinkedList()
+        {
+            Head = new Node();
+        }
+
         public void AddFirst(object data)
         {
             Head = new Node {Data = data, Next = null};
