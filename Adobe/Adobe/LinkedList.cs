@@ -69,29 +69,29 @@ namespace Adobe
 
     public static class LinkedListHelper
     {
-        // Uses Hash to store the ndoes visited
-        public static bool DetectLoopWithHash(Node headNode)
+        // Uses Hash to store the nodes visited
+        public static Node DetectLoopWithHash(Node headNode)
         {
             if (headNode == null)
-                return false;
+                return null;
 
             HashSet<Node> visitedNodes = new HashSet<Node>();
             while (headNode.Next != null)
             {
                 if (visitedNodes.Contains(headNode))
-                    return true;
+                    return headNode;
 
                 visitedNodes.Add(headNode);
                 headNode = headNode.Next;
             }
 
-            return false;
+            return null;
         }
 
-        public static bool DetectLoopWithFloydCycle(Node headNode)
+        public static Node DetectLoopWithFloydCycle(Node headNode)
         {
             if (headNode == null)
-                return false;
+                return null;
 
             Node fastNode = headNode;
             Node slowNode = headNode;
@@ -103,15 +103,18 @@ namespace Adobe
 
                 if (fastNode == slowNode)
                 {
-                    return true;
+                    return slowNode;
                 }
             }
 
-            return false;
+            return null;
         }
 
         public static void RemoveCycle(Node headNode)
         {
+            Node cycleNode = DetectLoopWithHash(headNode);
+            if (cycleNode != null)
+                cycleNode.Next = null;
         }
 
         public static int GetMiddleWithCounter(Node headNode)

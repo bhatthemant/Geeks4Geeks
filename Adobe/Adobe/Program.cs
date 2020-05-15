@@ -107,8 +107,8 @@ namespace Adobe
 
             // Linked List
 
-
             LinkedList linkedList = new LinkedList();
+
             linkedList.AddLast(1);
             linkedList.AddLast(2);
             linkedList.AddLast(3);
@@ -122,22 +122,28 @@ namespace Adobe
             // linkedList.AddLast(2);
             // linkedList.AddLast(1);
 
-            Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
-
+           // Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
 
             linkedList.TraverseAll();
 
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+             Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+             Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
             // Add a Cycle
-            // linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
+             linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
 
             // Detect a Cycle
 
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
+            // Remove a cycle
+            
+            LinkedListHelper.RemoveCycle(linkedList.Head);
+            
+            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+            
             // Find middle element
             // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithCounter(linkedList.Head)}");
             // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithTwoPointer(linkedList.Head)}");
@@ -149,11 +155,10 @@ namespace Adobe
 
             // Nth node from last
 
-            Console.WriteLine(
-                $"Element from last :  {LinkedListHelper.NthNodeFromEndDoubleIteration(linkedList.Head, 2).Data}");
-            Console.WriteLine(
-                $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
-
+            // Console.WriteLine(
+            //     $"Element from last :  {LinkedListHelper.NthNodeFromEndDoubleIteration(linkedList.Head, 2).Data}");
+            // Console.WriteLine(
+            //     $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
 
             /*
              
