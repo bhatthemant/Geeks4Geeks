@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Xml;
 
 namespace Adobe
@@ -16,7 +17,7 @@ namespace Adobe
 
         public LinkedList()
         {
-            Head = new Node();
+            // Head = new Node();
         }
 
         public void AddFirst(object data)
@@ -237,6 +238,48 @@ namespace Adobe
             }
 
             return true;
+        }
+
+        public static Node NthNodeFromEndDoubleIteration(Node headNode, int indexFromLast)
+        {
+            int nodeCount = 0;
+            Node tempNode = headNode;
+            Node secondNode = headNode;
+
+            while (tempNode != null)
+            {
+                tempNode = tempNode.Next;
+                nodeCount++;
+            }
+
+            if (nodeCount < indexFromLast)
+                return null;
+
+            for (int index = 0; index < nodeCount - indexFromLast; index++)
+            {
+                secondNode = secondNode.Next;
+            }
+
+            return secondNode;
+        }
+
+        public static Node NthNodeFromEndSingleIteration(Node headNode, int indexFromLast)
+        {
+            Node tempNode = headNode, secondNode = headNode;
+            for (int index = 1; index <= indexFromLast - 1; index++)
+            {
+                tempNode = tempNode.Next;
+                if (tempNode == null)
+                    return null;
+            }
+
+            while (tempNode.Next != null)
+            {
+                tempNode = tempNode.Next;
+                secondNode = secondNode.Next;
+            }
+
+            return secondNode;
         }
     }
 }
