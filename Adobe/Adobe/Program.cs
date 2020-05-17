@@ -13,6 +13,7 @@ namespace Adobe
             /*
 
             // List<GraphEdge<int>> edges = new List<GraphEdge<int>>
+            
             // {
             //     new GraphEdge<int>(0, 1, 6), new GraphEdge<int>(1, 2, 7),
             //     new GraphEdge<int>(2, 0, 5), new GraphEdge<int>(2, 1, 4),
@@ -105,6 +106,8 @@ namespace Adobe
             */
 
 
+            /*
+             
             // Linked List
 
             LinkedList linkedList = new LinkedList();
@@ -160,27 +163,29 @@ namespace Adobe
             // Console.WriteLine(
             //     $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
 
-            /*
-             
+            */
+
+
             // Binary Tree
 
-            BinaryTree binaryTree = new BinaryTree(1);
-            binaryTree.RootNode.Left = new BinaryTreeNode(2);
-            binaryTree.RootNode.Right = new BinaryTreeNode(3);
-            binaryTree.RootNode.Left.Left = new BinaryTreeNode(4);
-            binaryTree.RootNode.Left.Right = new BinaryTreeNode(5);
-            binaryTree.RootNode.Right.Left = new BinaryTreeNode(6);
-            binaryTree.RootNode.Right.Right = new BinaryTreeNode(7);
-
-            BinaryTreeHelper.LevelOrderTraversal(binaryTree.RootNode);
+            // BinaryTree binaryTree = new BinaryTree(1);
+            // binaryTree.RootNode.Left = new BinaryTreeNode(2);
+            // binaryTree.RootNode.Right = new BinaryTreeNode(3);
+            // binaryTree.RootNode.Left.Left = new BinaryTreeNode(4);
+            // binaryTree.RootNode.Left.Right = new BinaryTreeNode(5);
+            // binaryTree.RootNode.Right.Left = new BinaryTreeNode(6);
+            // binaryTree.RootNode.Right.Right = new BinaryTreeNode(7);
+            //
+            // BinaryTreeHelper.LevelOrderTraversal(binaryTree.RootNode);
 
             Console.WriteLine("Enter level order values : ");
             string[] arr = Console.ReadLine().Split(" ");
             BinaryTree binaryTree1 = new BinaryTree();
             BinaryTreeHelper.CreateTree(binaryTree1.RootNode, arr);
-            BinaryTreeHelper.LevelOrderTraversal(binaryTree1.RootNode);
-                        
-             */
+            // BinaryTreeHelper.LevelOrderTraversal(binaryTree1.RootNode);
+            BinaryTree tree2 = new BinaryTree();
+            BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
+
 
             // Array
 

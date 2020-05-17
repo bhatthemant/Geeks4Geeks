@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace Adobe
 {
@@ -51,32 +52,64 @@ namespace Adobe
             }
         }
 
+        public static void TreeCreate(BinaryTreeNode rootNode, string[] arr)
+        {
+            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+
+            rootNode.Data = (arr[0]);
+            nodeQueue.Enqueue(rootNode);
+            bool isLeftVisited = false;
+            for (int index = 1; index < arr.Length; index++)
+            {
+                //var tempNode = new BinaryTreeNode(arr[index]);
+                var tempNode = arr[index] != "N" ? new BinaryTreeNode(arr[index]) : null;
+
+                if (!isLeftVisited && nodeQueue.Peek() != null && nodeQueue.Peek().Left == null)
+                {
+                    nodeQueue.Peek().Left = tempNode;
+                    isLeftVisited = true;
+                }
+                else
+                {
+                    if (nodeQueue.Peek() != null)
+                        nodeQueue.Peek().Right = tempNode;
+                    isLeftVisited = false;
+                    nodeQueue.Dequeue();
+                }
+
+                if (tempNode != null)
+                    nodeQueue.Enqueue(tempNode);
+            }
+        }
+
         public static void CreateTree(BinaryTreeNode rootNode, string[] arr)
         {
-            int nodeCounter = 0;
             Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            rootNode.Data = arr[0];
             BinaryTreeNode currentNode = rootNode;
 
             for (int i = 0; i < arr.Length; i++)
             {
-                currentNode.Data = arr[i];
-
-                currentNode.Left = 2 * i + 1 < arr.Length
-                    ? new BinaryTreeNode(arr[2 * i + 1])
-                    : null;
-                nodeCounter++;
-                nodeQueue.Enqueue(currentNode.Left);
-                currentNode.Right = 2 * i + 2 < arr.Length
-                    ? new BinaryTreeNode(arr[2 * i + 2])
-                    : null;
-                nodeCounter++;
-                nodeQueue.Enqueue(currentNode.Right);
-
-                if (nodeCounter == 2)
+                bool isValidIndex = true;
+                if (currentNode != null)
                 {
-                    nodeCounter = 0;
-                    currentNode = nodeQueue.Dequeue();
+                    isValidIndex = 2 * i + 1 < arr.Length && arr[2 * i + 1] != "N";
+                    currentNode.Left = isValidIndex
+                        ? new BinaryTreeNode(arr[2 * i + 1])
+                        : null;
+                    if (currentNode.Left != null)
+                        nodeQueue.Enqueue(currentNode.Left);
+
+                    isValidIndex = 2 * i + 2 < arr.Length && arr[2 * i + 2] != "N";
+                    currentNode.Right = isValidIndex
+                        ? new BinaryTreeNode(arr[2 * i + 2])
+                        : null;
+                    if (currentNode.Right != null)
+                        nodeQueue.Enqueue(currentNode.Right);
                 }
+
+                if (nodeQueue.Count > 0)
+                    currentNode = nodeQueue.Dequeue();
             }
         }
     }
