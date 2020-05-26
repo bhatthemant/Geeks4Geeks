@@ -165,7 +165,7 @@ namespace Adobe
 
             */
 
-
+///*
             // Binary Tree
 
             // BinaryTree binaryTree = new BinaryTree(1);
@@ -185,7 +185,8 @@ namespace Adobe
             // BinaryTreeHelper.LevelOrderTraversal(binaryTree1.RootNode);
             BinaryTree tree2 = new BinaryTree();
             BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
-
+            BinaryTreeHelper.PrintNodeWithOutSibling(tree2.RootNode);
+//*/
 
             // Array
 
@@ -193,6 +194,11 @@ namespace Adobe
             //Trapped Water
             //Arrays.TrappedWater();
             //Arrays.MaxContigiuosArray();
+
+
+            // Search in sorted rotated array
+            // Console.WriteLine(
+            //     $"Array element 3 found at {Arrays.SearchInSortedRotatedArray(new int[] {1, 2, 7, 3, 4}, 3, 0, 5)}");
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 
 namespace Adobe
@@ -110,6 +111,42 @@ namespace Adobe
 
                 if (nodeQueue.Count > 0)
                     currentNode = nodeQueue.Dequeue();
+            }
+        }
+
+        public static void PrintNodeWithOutSibling(BinaryTreeNode rootNode)
+        {
+            if (rootNode == null)
+                return;
+
+            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            nodeQueue.Enqueue(rootNode);
+
+            while (nodeQueue.Any())
+            {
+                var currentNode = nodeQueue.Dequeue();
+                Queue<BinaryTreeNode> siblingQueue = new Queue<BinaryTreeNode>();
+                int nodeCounter = 0;
+                if (currentNode.Left != null)
+                {
+                    nodeCounter++;
+                    siblingQueue.Enqueue(currentNode.Left);
+                    nodeQueue.Enqueue(currentNode.Left);
+                }
+
+                if (currentNode.Right != null)
+                {
+                    nodeCounter++;
+                    siblingQueue.Enqueue(currentNode.Right);
+                    nodeQueue.Enqueue(currentNode.Right);
+                }
+
+                if (nodeCounter == 1)
+                {
+                    Console.WriteLine(siblingQueue.Dequeue().Data);
+                }
+
+                siblingQueue.Clear();
             }
         }
     }
