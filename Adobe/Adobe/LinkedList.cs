@@ -282,5 +282,31 @@ namespace Adobe
 
             return secondNode;
         }
+
+        public static void DeleteNodeWithoutHead(Node nodeToBeDeleted)
+        {
+            nodeToBeDeleted.Data = nodeToBeDeleted.Next.Data;
+            nodeToBeDeleted.Next = nodeToBeDeleted.Next.Next;
+        }
+
+        public static Node RotateLinkedList(Node headNode, int step)
+        {
+            Node endNode = headNode;
+            while (endNode.Next != null)
+            {
+                endNode = endNode.Next;
+            }
+
+            for (int index = 0; index < step; index++)
+            {
+                Node tempNode = headNode;
+                headNode = headNode.Next;
+                tempNode.Next = null;
+                endNode.Next = tempNode;
+                endNode = tempNode;
+            }
+
+            return headNode;
+        }
     }
 }

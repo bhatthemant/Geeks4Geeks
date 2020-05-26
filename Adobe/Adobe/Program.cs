@@ -105,8 +105,8 @@ namespace Adobe
             */
 
 
-            /*
-             
+            // /*
+
             // Linked List
 
             LinkedList linkedList = new LinkedList();
@@ -124,28 +124,31 @@ namespace Adobe
             // linkedList.AddLast(2);
             // linkedList.AddLast(1);
 
-           // Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
+            // Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
 
             linkedList.TraverseAll();
 
-             Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-             Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+            // Console.WriteLine(
+            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
             // Add a Cycle
-             linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
+            // linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
 
             // Detect a Cycle
 
-            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+            // Console.WriteLine(
+            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
             // Remove a cycle
-            
-            LinkedListHelper.RemoveCycle(linkedList.Head);
-            
-            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
-            
+
+            //  LinkedListHelper.RemoveCycle(linkedList.Head);
+
+            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+            // Console.WriteLine(
+            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+
             // Find middle element
             // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithCounter(linkedList.Head)}");
             // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithTwoPointer(linkedList.Head)}");
@@ -162,7 +165,15 @@ namespace Adobe
             // Console.WriteLine(
             //     $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
 
-            */
+            // Delete node with out header
+            // LinkedListHelper.DeleteNodeWithoutHead(linkedList.Head.Next.Next.Next);
+            // linkedList.TraverseAll();
+
+            // Rotate LinedList
+            linkedList.Head = LinkedListHelper.RotateLinkedList(linkedList.Head, 3);
+            linkedList.TraverseAll();
+
+            //  */
 
 /*
             // Binary Tree
@@ -200,8 +211,9 @@ namespace Adobe
             //     $"Array element 3 found at {Arrays.SearchInSortedRotatedArray(new int[] {1, 2, 7, 3, 4}, 3, 0, 5)}");
 
 
+            /*
             // Stack
-
+            
             // Find min element with O(1)
             Stack objStack = new Stack();
             objStack.Push(2);
@@ -213,6 +225,8 @@ namespace Adobe
             Console.WriteLine($"Min element : {objStack.GetMin()}");
             objStack.Pop();
             Console.WriteLine($"Min element : {objStack.GetMin()}");
+            
+            */
         }
     }
 }
