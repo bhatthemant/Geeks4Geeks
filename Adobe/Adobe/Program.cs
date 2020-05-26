@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace Adobe
 {
@@ -165,7 +164,7 @@ namespace Adobe
 
             */
 
-///*
+/*
             // Binary Tree
 
             // BinaryTree binaryTree = new BinaryTree(1);
@@ -186,7 +185,7 @@ namespace Adobe
             BinaryTree tree2 = new BinaryTree();
             BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
             BinaryTreeHelper.PrintNodeWithOutSibling(tree2.RootNode);
-//*/
+*/
 
             // Array
 
@@ -199,6 +198,21 @@ namespace Adobe
             // Search in sorted rotated array
             // Console.WriteLine(
             //     $"Array element 3 found at {Arrays.SearchInSortedRotatedArray(new int[] {1, 2, 7, 3, 4}, 3, 0, 5)}");
+
+
+            // Stack
+
+            // Find min element with O(1)
+            Stack objStack = new Stack();
+            objStack.Push(2);
+            objStack.Push(-1);
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            objStack.Push(-3);
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            objStack.Pop();
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            objStack.Pop();
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
         }
     }
 }
