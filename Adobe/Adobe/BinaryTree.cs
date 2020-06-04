@@ -112,43 +112,28 @@ namespace Adobe
             }
         }
 
-        public static int GetTreeHeight(BinaryTreeNode rootNode, string[] arr)
+        public static int GetHeight(BinaryTreeNode rootNode)
         {
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
-            rootNode.Data = arr[0];
-            nodeQueue.Enqueue(rootNode);
-            bool isLeftVisited = false;
-            int treeHeight = 1;
+            if (rootNode == null)
+                return 0;
 
-            for (int index = 1; index < arr.Length; index++)
-            {
-                var tempNode = arr[index] != "N" ? new BinaryTreeNode(arr[index]) : null;
-                if (!isLeftVisited && nodeQueue.Peek() != null && nodeQueue.Peek().Left == null)
-                {
-                    isLeftVisited = true;
-                    nodeQueue.Peek().Left = tempNode;
-                }
-                else
-                {
-                    if (nodeQueue.Peek() != null)
-                    {
-                        nodeQueue.Peek().Right = tempNode;
-                    }
+            int leftHeight = GetHeight(rootNode.Left);
+            int rightHeight = GetHeight(rootNode.Right);
 
-                    if (tempNode != null && isLeftVisited)
-                        treeHeight++;
+            return 1 + Math.Max(leftHeight, rightHeight);
+        }
 
-                    isLeftVisited = false;
-                    nodeQueue.Dequeue();
-                }
+        public static void MirrorTree(BinaryTreeNode rootNode)
+        {
+            if (rootNode == null)
+                return;
 
-                if (tempNode != null)
-                {
-                    nodeQueue.Enqueue(tempNode);
-                }
-            }
+            MirrorTree(rootNode.Left);
+            MirrorTree(rootNode.Right);
 
-            return treeHeight;
+            var tempNode = rootNode.Left;
+            rootNode.Left = rootNode.Right;
+            rootNode.Right = tempNode;
         }
 
 

@@ -191,14 +191,17 @@ namespace Adobe
             Console.WriteLine("Enter level order values : ");
             string[] arr = Console.ReadLine().Split(" ");
             BinaryTree binaryTree1 = new BinaryTree();
-            //BinaryTreeHelper.CreateTree(binaryTree1.RootNode, arr);
+            BinaryTreeHelper.CreateTree(binaryTree1.RootNode, arr);
             // BinaryTreeHelper.LevelOrderTraversal(binaryTree1.RootNode);
             // BinaryTree tree2 = new BinaryTree();
             // BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
             //BinaryTreeHelper.PrintNodeWithOutSibling(tree2.RootNode);
 
-            Console.WriteLine($"Height of the tree : { BinaryTreeHelper.GetTreeHeight(binaryTree1.RootNode, arr)}"); // This calculates the height of tree when the tree needs to be created from level order;
-                                                                                                                     // For a case where tree is already constructed we can recursively call GetHeight fio Left and right subtree and return of MAX of both the results.
+            BinaryTree binaryTree2 = new BinaryTree();
+            Console.WriteLine(
+                $"Height of the tree : {BinaryTreeHelper.GetHeight(binaryTree1.RootNode)}"); // For a case where tree is already constructed we can recursively call GetHeight fio Left and right subtree and return of MAX of both the results.
+
+            BinaryTreeHelper.MirrorTree(binaryTree1.RootNode);
 //*/
 
             // Array
