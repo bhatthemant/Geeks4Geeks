@@ -9,10 +9,51 @@ namespace Adobe
         {
             // Graph
 
-            /*
+            // Create Nodes
+
+            GraphNode<string> mallibu = new GraphNode<string>("Mallibu", 0);
+            GraphNode<string> santaBarbara = new GraphNode<string>("SantaBarbara", 1);
+            GraphNode<string> losAngeles = new GraphNode<string>("LosAngeles", 2);
+            GraphNode<string> barstow = new GraphNode<string>("Barstow", 3);
+            GraphNode<string> sanDiego = new GraphNode<string>("SanDiego", 4);
+            GraphNode<string> riverSide = new GraphNode<string>("RiverSide", 5);
+            GraphNode<string> palmSprings = new GraphNode<string>("PalmSprings", 6);
+            GraphNode<string> elCajon = new GraphNode<string>("ElCajon", 7);
+
+            // Create Edges
+
+            GraphEdge<string> msb = new GraphEdge<string>(mallibu, santaBarbara, 45);
+            GraphEdge<string> mla = new GraphEdge<string>(mallibu, losAngeles, 20);
+            GraphEdge<string> lsb = new GraphEdge<string>(losAngeles, santaBarbara, 30);
+            GraphEdge<string> ssb = new GraphEdge<string>(santaBarbara, barstow, 45);
+            GraphEdge<string> lar = new GraphEdge<string>(losAngeles, riverSide, 25);
+            GraphEdge<string> lsd = new GraphEdge<string>(losAngeles, sanDiego, 100);
+            GraphEdge<string> bar = new GraphEdge<string>(barstow, riverSide, 75);
+            GraphEdge<string> sdr = new GraphEdge<string>(sanDiego, riverSide, 90);
+            GraphEdge<string> sed = new GraphEdge<string>(sanDiego, elCajon, 15);
+            GraphEdge<string> rps = new GraphEdge<string>(riverSide, palmSprings, 75);
+
+            List<GraphEdge<string>> edgeList = new List<GraphEdge<string>>()
+                {msb, mla, lsb, ssb, lar, lsd, bar, sdr, sed, rps};
+
+            GraphWithAdjList<string> graphAdjList = new GraphWithAdjList<string>(edgeList);
+
+            GraphWithAdjMatrix<string> graphAjdMatrix = new GraphWithAdjMatrix<string>(8);
+            graphAjdMatrix.AddEdge(mallibu,santaBarbara,45);
+            graphAjdMatrix.AddEdge(mallibu, losAngeles, 20);
+            graphAjdMatrix.AddEdge(losAngeles, santaBarbara, 30);
+            graphAjdMatrix.AddEdge(santaBarbara, barstow, 45);
+            graphAjdMatrix.AddEdge(losAngeles, riverSide, 25);
+            graphAjdMatrix.AddEdge(losAngeles, sanDiego, 100);
+            graphAjdMatrix.AddEdge(barstow, riverSide, 75);
+            graphAjdMatrix.AddEdge(sanDiego, riverSide, 90);
+            graphAjdMatrix.AddEdge(sanDiego, elCajon, 15);
+            graphAjdMatrix.AddEdge(riverSide, palmSprings, 75);
+
+            // /*
 
             // List<GraphEdge<int>> edges = new List<GraphEdge<int>>
-            
+
             // {
             //     new GraphEdge<int>(0, 1, 6), new GraphEdge<int>(1, 2, 7),
             //     new GraphEdge<int>(2, 0, 5), new GraphEdge<int>(2, 1, 4),
@@ -43,20 +84,20 @@ namespace Adobe
             // graphWithAdjMatrix.AddEdge(cNode, bNode, 4);
             // graphWithAdjMatrix.AddEdge(dNode, cNode, 10);
 
-            Vertex<string> aVertex = new Vertex<string>("a");
-            Vertex<string> bVertex = new Vertex<string>("b");
-            Vertex<string> cVertex = new Vertex<string>("c");
-            Vertex<string> dVertex = new Vertex<string>("d");
+            // Vertex<string> aVertex = new Vertex<string>("a");
+            // Vertex<string> bVertex = new Vertex<string>("b");
+            // Vertex<string> cVertex = new Vertex<string>("c");
+            // Vertex<string> dVertex = new Vertex<string>("d");
+            //
+            //
+            // GenericGraph<string> genericGraph = new GenericGraph<string>();
+            // genericGraph.AddPair(aVertex, bVertex);
+            // genericGraph.AddPair(bVertex, cVertex);
+            // genericGraph.AddPair(cVertex, aVertex);
+            // genericGraph.AddPair(cVertex, bVertex);
+            // genericGraph.AddPair(dVertex, cVertex);
 
-
-            GenericGraph<string> genericGraph = new GenericGraph<string>();
-            genericGraph.AddPair(aVertex, bVertex);
-            genericGraph.AddPair(bVertex, cVertex);
-            genericGraph.AddPair(cVertex, aVertex);
-            genericGraph.AddPair(cVertex, bVertex);
-            genericGraph.AddPair(dVertex, cVertex);
-            
-            */
+            // */
 
             // BST 
 
@@ -175,7 +216,7 @@ namespace Adobe
 
             */
 
-            ///*
+            /*
             // Binary Tree
 
             // BinaryTree binaryTree = new BinaryTree(1);
@@ -202,7 +243,7 @@ namespace Adobe
                 $"Height of the tree : {BinaryTreeHelper.GetHeight(binaryTree1.RootNode)}"); // For a case where tree is already constructed we can recursively call GetHeight fio Left and right subtree and return of MAX of both the results.
 
             BinaryTreeHelper.MirrorTree(binaryTree1.RootNode);
-//*/
+*/
 
             // Array
 
