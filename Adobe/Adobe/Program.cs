@@ -105,77 +105,77 @@ namespace Adobe
             */
 
 
-            // /*
+            /*
 
-            // Linked List
+           // Linked List
 
-            LinkedList linkedList = new LinkedList();
+           LinkedList linkedList = new LinkedList();
 
-            linkedList.AddLast(1);
-            linkedList.AddLast(2);
-            linkedList.AddLast(3);
-            linkedList.AddLast(4);
-            linkedList.AddLast(5);
-            linkedList.AddLast(6);
-            linkedList.AddLast(7);
-            linkedList.AddLast(8);
-            linkedList.AddLast(9);
-            // linkedList.AddLast(3);
-            // linkedList.AddLast(2);
-            // linkedList.AddLast(1);
+           linkedList.AddLast(1);
+           linkedList.AddLast(2);
+           linkedList.AddLast(3);
+           linkedList.AddLast(4);
+           linkedList.AddLast(5);
+           linkedList.AddLast(6);
+           linkedList.AddLast(7);
+           linkedList.AddLast(8);
+           linkedList.AddLast(9);
+           // linkedList.AddLast(3);
+           // linkedList.AddLast(2);
+           // linkedList.AddLast(1);
 
-            // Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
+           // Console.WriteLine($"Is linked list palindrome : {LinkedListHelper.IsPalindrome(linkedList.Head)}");
 
-            linkedList.TraverseAll();
+           linkedList.TraverseAll();
 
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            // Console.WriteLine(
-            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+           // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+           // Console.WriteLine(
+           //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
-            // Add a Cycle
-            // linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
+           // Add a Cycle
+           // linkedList.Head.Next.Next.Next.Next = linkedList.Head.Next;
 
-            // Detect a Cycle
+           // Detect a Cycle
 
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            // Console.WriteLine(
-            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+           // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+           // Console.WriteLine(
+           //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
-            // Remove a cycle
+           // Remove a cycle
 
-            //  LinkedListHelper.RemoveCycle(linkedList.Head);
+           //  LinkedListHelper.RemoveCycle(linkedList.Head);
 
-            // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
-            // Console.WriteLine(
-            //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
+           // Console.WriteLine($"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithHash(linkedList.Head)}");
+           // Console.WriteLine(
+           //     $"Linked List has a Cycle : {LinkedListHelper.DetectLoopWithFloydCycle(linkedList.Head)}");
 
-            // Find middle element
-            // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithCounter(linkedList.Head)}");
-            // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithTwoPointer(linkedList.Head)}");
-            //Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithEvenOdd(linkedList.Head)}");
+           // Find middle element
+           // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithCounter(linkedList.Head)}");
+           // Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithTwoPointer(linkedList.Head)}");
+           //Console.WriteLine($"Middle element is : {LinkedListHelper.GetMiddleWithEvenOdd(linkedList.Head)}");
 
-            //Reveres LinkedList
-            // LinkedListHelper.ReverseWithInsertAtFront(linkedList.Head);
-            //LinkedListHelper.Reverse(linkedList.Head);
+           //Reveres LinkedList
+           // LinkedListHelper.ReverseWithInsertAtFront(linkedList.Head);
+           //LinkedListHelper.Reverse(linkedList.Head);
 
-            // Nth node from last
+           // Nth node from last
 
-            // Console.WriteLine(
-            //     $"Element from last :  {LinkedListHelper.NthNodeFromEndDoubleIteration(linkedList.Head, 2).Data}");
-            // Console.WriteLine(
-            //     $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
+           // Console.WriteLine(
+           //     $"Element from last :  {LinkedListHelper.NthNodeFromEndDoubleIteration(linkedList.Head, 2).Data}");
+           // Console.WriteLine(
+           //     $"Element from last :  {LinkedListHelper.NthNodeFromEndSingleIteration(linkedList.Head, 2).Data}");
 
-            // Delete node with out header
-            // LinkedListHelper.DeleteNodeWithoutHead(linkedList.Head.Next.Next.Next);
-            // linkedList.TraverseAll();
+           // Delete node with out header
+           // LinkedListHelper.DeleteNodeWithoutHead(linkedList.Head.Next.Next.Next);
+           // linkedList.TraverseAll();
 
-            // Rotate LinedList
-            linkedList.Head = LinkedListHelper.RotateLinkedList(linkedList.Head, 3);
-            linkedList.TraverseAll();
+           // Rotate LinedList
+           linkedList.Head = LinkedListHelper.RotateLinkedList(linkedList.Head, 3);
+           linkedList.TraverseAll();
 
-            //  */
+            */
 
-/*
+            ///*
             // Binary Tree
 
             // BinaryTree binaryTree = new BinaryTree(1);
@@ -191,12 +191,15 @@ namespace Adobe
             Console.WriteLine("Enter level order values : ");
             string[] arr = Console.ReadLine().Split(" ");
             BinaryTree binaryTree1 = new BinaryTree();
-            BinaryTreeHelper.CreateTree(binaryTree1.RootNode, arr);
+            //BinaryTreeHelper.CreateTree(binaryTree1.RootNode, arr);
             // BinaryTreeHelper.LevelOrderTraversal(binaryTree1.RootNode);
-            BinaryTree tree2 = new BinaryTree();
-            BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
-            BinaryTreeHelper.PrintNodeWithOutSibling(tree2.RootNode);
-*/
+            // BinaryTree tree2 = new BinaryTree();
+            // BinaryTreeHelper.TreeCreate(tree2.RootNode, arr);
+            //BinaryTreeHelper.PrintNodeWithOutSibling(tree2.RootNode);
+
+            Console.WriteLine($"Height of the tree : { BinaryTreeHelper.GetTreeHeight(binaryTree1.RootNode, arr)}"); // This calculates the height of tree when the tree needs to be created from level order;
+                                                                                                                     // For a case where tree is already constructed we can recursively call GetHeight fio Left and right subtree and return of MAX of both the results.
+//*/
 
             // Array
 

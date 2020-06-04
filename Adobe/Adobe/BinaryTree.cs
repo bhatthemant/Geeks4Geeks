@@ -55,7 +55,6 @@ namespace Adobe
         public static void TreeCreate(BinaryTreeNode rootNode, string[] arr)
         {
             Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
-
             rootNode.Data = (arr[0]);
             nodeQueue.Enqueue(rootNode);
             bool isLeftVisited = false;
@@ -112,6 +111,46 @@ namespace Adobe
                     currentNode = nodeQueue.Dequeue();
             }
         }
+
+        public static int GetTreeHeight(BinaryTreeNode rootNode, string[] arr)
+        {
+            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            rootNode.Data = arr[0];
+            nodeQueue.Enqueue(rootNode);
+            bool isLeftVisited = false;
+            int treeHeight = 1;
+
+            for (int index = 1; index < arr.Length; index++)
+            {
+                var tempNode = arr[index] != "N" ? new BinaryTreeNode(arr[index]) : null;
+                if (!isLeftVisited && nodeQueue.Peek() != null && nodeQueue.Peek().Left == null)
+                {
+                    isLeftVisited = true;
+                    nodeQueue.Peek().Left = tempNode;
+                }
+                else
+                {
+                    if (nodeQueue.Peek() != null)
+                    {
+                        nodeQueue.Peek().Right = tempNode;
+                    }
+
+                    if (tempNode != null && isLeftVisited)
+                        treeHeight++;
+
+                    isLeftVisited = false;
+                    nodeQueue.Dequeue();
+                }
+
+                if (tempNode != null)
+                {
+                    nodeQueue.Enqueue(tempNode);
+                }
+            }
+
+            return treeHeight;
+        }
+
 
         public static void PrintNodeWithOutSibling(BinaryTreeNode rootNode)
         {
