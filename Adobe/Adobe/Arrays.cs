@@ -82,5 +82,49 @@ namespace Adobe
 
             Console.WriteLine(maxValueSoFar);
         }
+
+        public static int SearchInSortedRotatedArray(int[] inputArr, int key, int low, int high)
+        {
+            if (low > high)
+                return -1;
+
+            int mid = (low + high) / 2;
+
+            if (inputArr[mid] == key)
+                return mid;
+
+            if (inputArr[low] <= inputArr[mid])
+            {
+                if (inputArr[low] <= key && key <= inputArr[mid])
+                {
+                    return SearchInSortedRotatedArray(inputArr, key, low, mid - 1);
+                }
+                else
+                    return SearchInSortedRotatedArray(inputArr, key, mid + 1, high);
+            }
+            else
+            {
+                if (inputArr[mid] <= key && key <= inputArr[high])
+                {
+                    return SearchInSortedRotatedArray(inputArr, key, mid + 1, high);
+                }
+                else
+                {
+                    return SearchInSortedRotatedArray(inputArr, key, low, mid - 1);
+                }
+            }
+        }
+
+        public static void RotateArray(int[] inputArr, int rotation)
+        {
+            int mod = rotation % inputArr.Length;
+            for (int index = 0; index < inputArr.Length; index++)
+            {
+                Console.Write(inputArr[(index + mod) %
+                                       inputArr.Length] + " ");
+
+                Console.WriteLine();
+            }
+        }
     }
 }

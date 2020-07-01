@@ -11,44 +11,61 @@ namespace Adobe
 
             // Create Nodes
 
-            GraphNode<string> mallibu = new GraphNode<string>("Mallibu", 0);
-            GraphNode<string> santaBarbara = new GraphNode<string>("SantaBarbara", 1);
-            GraphNode<string> losAngeles = new GraphNode<string>("LosAngeles", 2);
-            GraphNode<string> barstow = new GraphNode<string>("Barstow", 3);
-            GraphNode<string> sanDiego = new GraphNode<string>("SanDiego", 4);
-            GraphNode<string> riverSide = new GraphNode<string>("RiverSide", 5);
-            GraphNode<string> palmSprings = new GraphNode<string>("PalmSprings", 6);
-            GraphNode<string> elCajon = new GraphNode<string>("ElCajon", 7);
+            // GraphNode<string> mallibu = new GraphNode<string>("Mallibu", 0);
+            // GraphNode<string> santaBarbara = new GraphNode<string>("SantaBarbara", 1);
+            // GraphNode<string> losAngeles = new GraphNode<string>("LosAngeles", 2);
+            // GraphNode<string> barstow = new GraphNode<string>("Barstow", 3);
+            // GraphNode<string> sanDiego = new GraphNode<string>("SanDiego", 4);
+            // GraphNode<string> riverSide = new GraphNode<string>("RiverSide", 5);
+            // GraphNode<string> palmSprings = new GraphNode<string>("PalmSprings", 6);
+            // GraphNode<string> elCajon = new GraphNode<string>("ElCajon", 7);
 
             // Create Edges
 
-            GraphEdge<string> msb = new GraphEdge<string>(mallibu, santaBarbara, 45);
-            GraphEdge<string> mla = new GraphEdge<string>(mallibu, losAngeles, 20);
-            GraphEdge<string> lsb = new GraphEdge<string>(losAngeles, santaBarbara, 30);
-            GraphEdge<string> ssb = new GraphEdge<string>(santaBarbara, barstow, 45);
-            GraphEdge<string> lar = new GraphEdge<string>(losAngeles, riverSide, 25);
-            GraphEdge<string> lsd = new GraphEdge<string>(losAngeles, sanDiego, 100);
-            GraphEdge<string> bar = new GraphEdge<string>(barstow, riverSide, 75);
-            GraphEdge<string> sdr = new GraphEdge<string>(sanDiego, riverSide, 90);
-            GraphEdge<string> sed = new GraphEdge<string>(sanDiego, elCajon, 15);
-            GraphEdge<string> rps = new GraphEdge<string>(riverSide, palmSprings, 75);
+            // GraphEdge<string> msb = new GraphEdge<string>(mallibu, santaBarbara, 45);
+            // GraphEdge<string> mla = new GraphEdge<string>(mallibu, losAngeles, 20);
+            // GraphEdge<string> lsb = new GraphEdge<string>(losAngeles, santaBarbara, 30);
+            // GraphEdge<string> ssb = new GraphEdge<string>(santaBarbara, barstow, 45);
+            // GraphEdge<string> lar = new GraphEdge<string>(losAngeles, riverSide, 25);
+            // GraphEdge<string> lsd = new GraphEdge<string>(losAngeles, sanDiego, 100);
+            // GraphEdge<string> bar = new GraphEdge<string>(barstow, riverSide, 75);
+            // GraphEdge<string> sdr = new GraphEdge<string>(sanDiego, riverSide, 90);
+            // GraphEdge<string> sed = new GraphEdge<string>(sanDiego, elCajon, 15);
+            // GraphEdge<string> rps = new GraphEdge<string>(riverSide, palmSprings, 75);
+            //
+            // List<GraphEdge<string>> edgeList = new List<GraphEdge<string>>()
+            //     {msb, mla, lsb, ssb, lar, lsd, bar, sdr, sed, rps};
+            //
+            // GraphWithAdjList<string> graphAdjList = new GraphWithAdjList<string>(edgeList);
+            //
+            // Console.WriteLine(
+            //     $"Distance between mallibu and losAngeles : {graphAdjList.GetEdgeDistance(mallibu, losAngeles)}");
+            // Console.WriteLine(
+            //     $"Distance between sanDiego and losAngeles : {graphAdjList.GetEdgeDistance(losAngeles, sanDiego)}");
+            //
+            // Console.WriteLine(
+            //     $"Distance between mallibu and palmSprings : {graphAdjList.GetEdgeDistance(mallibu, palmSprings)}");
+            //
+            //
+            // GraphWithAdjMatrix<string> graphAjdMatrix = new GraphWithAdjMatrix<string>(8);
+            // graphAjdMatrix.AddEdge(mallibu, santaBarbara, 45);
+            // graphAjdMatrix.AddEdge(mallibu, losAngeles, 20);
+            // graphAjdMatrix.AddEdge(losAngeles, santaBarbara, 30);
+            // graphAjdMatrix.AddEdge(santaBarbara, barstow, 45);
+            // graphAjdMatrix.AddEdge(losAngeles, riverSide, 25);
+            // graphAjdMatrix.AddEdge(losAngeles, sanDiego, 100);
+            // graphAjdMatrix.AddEdge(barstow, riverSide, 75);
+            // graphAjdMatrix.AddEdge(sanDiego, riverSide, 90);
+            // graphAjdMatrix.AddEdge(sanDiego, elCajon, 15);
+            // graphAjdMatrix.AddEdge(riverSide, palmSprings, 75);
+            //
+            // Console.WriteLine(
+            //     $"Distance between mallibu and losAngeles : {graphAjdMatrix.GetEdgeDistance(mallibu, losAngeles)}");
+            // Console.WriteLine(
+            //     $"Distance between sanDiego and losAngeles : {graphAjdMatrix.GetEdgeDistance(losAngeles, sanDiego)}");
+            // Console.WriteLine(
+            //     $"Distance between mallibu and palmSprings : {graphAjdMatrix.GetEdgeDistance(mallibu, palmSprings)}");
 
-            List<GraphEdge<string>> edgeList = new List<GraphEdge<string>>()
-                {msb, mla, lsb, ssb, lar, lsd, bar, sdr, sed, rps};
-
-            GraphWithAdjList<string> graphAdjList = new GraphWithAdjList<string>(edgeList);
-
-            GraphWithAdjMatrix<string> graphAjdMatrix = new GraphWithAdjMatrix<string>(8);
-            graphAjdMatrix.AddEdge(mallibu,santaBarbara,45);
-            graphAjdMatrix.AddEdge(mallibu, losAngeles, 20);
-            graphAjdMatrix.AddEdge(losAngeles, santaBarbara, 30);
-            graphAjdMatrix.AddEdge(santaBarbara, barstow, 45);
-            graphAjdMatrix.AddEdge(losAngeles, riverSide, 25);
-            graphAjdMatrix.AddEdge(losAngeles, sanDiego, 100);
-            graphAjdMatrix.AddEdge(barstow, riverSide, 75);
-            graphAjdMatrix.AddEdge(sanDiego, riverSide, 90);
-            graphAjdMatrix.AddEdge(sanDiego, elCajon, 15);
-            graphAjdMatrix.AddEdge(riverSide, palmSprings, 75);
 
             // /*
 
@@ -251,7 +268,7 @@ namespace Adobe
             //Trapped Water
             //Arrays.TrappedWater();
             //Arrays.MaxContigiuosArray();
-
+            Arrays.RotateArray(new int[] {1, 3, 5, 4, 2}, 2);
 
             // Search in sorted rotated array
             // Console.WriteLine(
