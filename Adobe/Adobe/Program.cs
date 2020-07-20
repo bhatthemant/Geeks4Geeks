@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Adobe
+﻿namespace Adobe
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Graph
 
@@ -268,13 +265,25 @@ namespace Adobe
             //Trapped Water
             //Arrays.TrappedWater();
             //Arrays.MaxContigiuosArray();
-            Arrays.RotateArray(new int[] {1, 3, 5, 4, 2}, 2);
-
+            // Arrays.RotateArray(new int[] {1, 3, 5, 4, 2}, 2);
+            //Arrays.FindPairWithSumUsingSorting(new int[] {0, 1, 2, 3, 4, 5}, 5);
             // Search in sorted rotated array
             // Console.WriteLine(
             //     $"Array element 3 found at {Arrays.SearchInSortedRotatedArray(new int[] {1, 2, 7, 3, 4}, 3, 0, 5)}");
 
-
+            //Arrays.MonkAndPowerOfTime(new int[] {3, 2, 1}, new int[] {1, 3, 2});
+            //Arrays.DuplicateElements(new int[] {5, 3, 1, 3, 5, 5});
+            // Arrays.PairWithMinProduct(new int[] {11, 8, 5, 7, 5, 100});
+            // Arrays.PairWithMaxProduct(new int[] {11, 8, 5, 7, 5, 100});
+            // Arrays.PairWithMinProduct(new int[] {198, 76, 544, 123, 154, 675});
+            // Arrays.PairWithMaxProduct(new int[] {198, 76, 544, 123, 154, 675});
+            // Arrays.PairWithMinProduct(new int[] {1, 4, 3, 6, 7, 0});
+            // Arrays.PairWithMaxProduct(new int[] {1, 4, 3, 6, 7, 0});
+            // Arrays.PairWithMinProduct(new int[] {-1, -3, -4, 2, 0, -5});
+            // Arrays.PairWithMaxProduct(new int[] {-1, -3, -4, 2, 0, -5});
+            Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
+            Arrays.MinProduct(new[] {-1, 2, -2, -8});
+            Arrays.MinProduct(new[] {1, 2, 3, 4});
             /*
             // Stack
             
@@ -291,6 +300,11 @@ namespace Adobe
             Console.WriteLine($"Min element : {objStack.GetMin()}");
             
             */
+
+            // Queue
+
+            var subcls = new SubClass();
+            subcls.BaseMethod("aa", "");
         }
     }
 }

@@ -4,9 +4,9 @@ namespace Adobe
 {
     public class Stack
     {
-        private int topCounter = -1;
-        private int[] arr = new int[100];
+        private readonly int[] arr = new int[100];
         private int minVal = int.MinValue;
+        private int topCounter = -1;
 
         public void Push(int val)
         {
@@ -31,7 +31,10 @@ namespace Adobe
             }
         }
 
-        public int GetMin() => minVal;
+        public int GetMin()
+        {
+            return minVal;
+        }
 
         public void Pop()
         {

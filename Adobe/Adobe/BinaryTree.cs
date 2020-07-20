@@ -38,7 +38,7 @@ namespace Adobe
             if (rootNode == null)
                 return;
 
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            var nodeQueue = new Queue<BinaryTreeNode>();
             nodeQueue.Enqueue(rootNode);
 
             while (nodeQueue.Count > 0)
@@ -54,11 +54,11 @@ namespace Adobe
 
         public static void TreeCreate(BinaryTreeNode rootNode, string[] arr)
         {
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
-            rootNode.Data = (arr[0]);
+            var nodeQueue = new Queue<BinaryTreeNode>();
+            rootNode.Data = arr[0];
             nodeQueue.Enqueue(rootNode);
-            bool isLeftVisited = false;
-            for (int index = 1; index < arr.Length; index++)
+            var isLeftVisited = false;
+            for (var index = 1; index < arr.Length; index++)
             {
                 //var tempNode = new BinaryTreeNode(arr[index]);
                 var tempNode = arr[index] != "N" ? new BinaryTreeNode(arr[index]) : null;
@@ -83,13 +83,13 @@ namespace Adobe
 
         public static void CreateTree(BinaryTreeNode rootNode, string[] arr)
         {
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            var nodeQueue = new Queue<BinaryTreeNode>();
             rootNode.Data = arr[0];
-            BinaryTreeNode currentNode = rootNode;
+            var currentNode = rootNode;
 
-            for (int i = 0; i < arr.Length; i++)
+            for (var i = 0; i < arr.Length; i++)
             {
-                bool isValidIndex = true;
+                var isValidIndex = true;
                 if (currentNode != null)
                 {
                     isValidIndex = 2 * i + 1 < arr.Length && arr[2 * i + 1] != "N";
@@ -117,8 +117,8 @@ namespace Adobe
             if (rootNode == null)
                 return 0;
 
-            int leftHeight = GetHeight(rootNode.Left);
-            int rightHeight = GetHeight(rootNode.Right);
+            var leftHeight = GetHeight(rootNode.Left);
+            var rightHeight = GetHeight(rootNode.Right);
 
             return 1 + Math.Max(leftHeight, rightHeight);
         }
@@ -142,14 +142,14 @@ namespace Adobe
             if (rootNode == null)
                 return;
 
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            var nodeQueue = new Queue<BinaryTreeNode>();
             nodeQueue.Enqueue(rootNode);
 
             while (nodeQueue.Any())
             {
                 var currentNode = nodeQueue.Dequeue();
-                Queue<BinaryTreeNode> siblingQueue = new Queue<BinaryTreeNode>();
-                int nodeCounter = 0;
+                var siblingQueue = new Queue<BinaryTreeNode>();
+                var nodeCounter = 0;
                 if (currentNode.Left != null)
                 {
                     nodeCounter++;
@@ -164,10 +164,7 @@ namespace Adobe
                     nodeQueue.Enqueue(currentNode.Right);
                 }
 
-                if (nodeCounter == 1)
-                {
-                    Console.WriteLine(siblingQueue.Dequeue().Data);
-                }
+                if (nodeCounter == 1) Console.WriteLine(siblingQueue.Dequeue().Data);
 
                 siblingQueue.Clear();
             }

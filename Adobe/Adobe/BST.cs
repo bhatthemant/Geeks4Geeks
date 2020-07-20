@@ -5,8 +5,8 @@ namespace Adobe
 {
     public class BST
     {
-        public int NodeValue;
         public BST Left, Right;
+        public int NodeValue;
         public int Weight = 1;
 
         public BST()
@@ -26,10 +26,7 @@ namespace Adobe
     {
         public static BST Insert(BST rootNode, int nodeValue)
         {
-            if (rootNode == null)
-            {
-                return new BST(nodeValue);
-            }
+            if (rootNode == null) return new BST(nodeValue);
 
             if (nodeValue > rootNode.NodeValue)
             {
@@ -57,8 +54,7 @@ namespace Adobe
             {
                 if (Math.Abs(rootNodeValue - nodeValue) > distance)
                     return new BST(nodeValue);
-                else
-                    return null;
+                return null;
             }
 
             if (nodeValue > rootNode.NodeValue)
@@ -117,13 +113,11 @@ namespace Adobe
         {
             if (rootNode == null)
                 return true;
-            List<int> intList = new List<int>();
+            var intList = new List<int>();
             Inorder(rootNode, ref intList);
-            for (int index = 1; index < intList.Count; index++)
-            {
+            for (var index = 1; index < intList.Count; index++)
                 if (intList[index] < intList[index - 1])
                     return false;
-            }
 
             return true;
         }
@@ -136,12 +130,10 @@ namespace Adobe
 
             if (rootNode.Left != null && rootNode.NodeValue < rootNode.Left.NodeValue)
                 return false;
-            else
-                CheckForBST(rootNode.Left);
+            CheckForBST(rootNode.Left);
             if (rootNode.Right != null && rootNode.NodeValue > rootNode.Right.NodeValue)
                 return false;
-            else
-                CheckForBST(rootNode.Right);
+            CheckForBST(rootNode.Right);
 
             return true;
         }
@@ -175,20 +167,14 @@ namespace Adobe
 
         public static int FindMin(BST rootNode)
         {
-            while (rootNode.Left != null)
-            {
-                rootNode = rootNode.Left;
-            }
+            while (rootNode.Left != null) rootNode = rootNode.Left;
 
             return rootNode.NodeValue;
         }
 
         public static int FindMax(BST rootNode)
         {
-            while (rootNode.Right != null)
-            {
-                rootNode = rootNode.Right;
-            }
+            while (rootNode.Right != null) rootNode = rootNode.Right;
 
             return rootNode.NodeValue;
         }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,19 +6,19 @@ namespace Adobe
     // Data Structure for AdjacenyList
     public class GraphNode<T>
     {
-        // Generic NodeValue for storing the Node data (int or string)
-        public T NodeValue;
-
         // Index for storing the Node data index in Adjacency Matrix
         public int Index;
 
-        //
-        // public int NodeWeight;
+        // Generic NodeValue for storing the Node data (int or string)
+        public T NodeValue;
+
+        // Node weight for Adj List , will be zero for self node, and value for other nodes
+        public int NodeWeight;
 
         public GraphNode(T nodeValue, int index)
         {
-            this.NodeValue = nodeValue;
-            this.Index = index;
+            NodeValue = nodeValue;
+            Index = index;
         }
     }
 
@@ -30,9 +29,9 @@ namespace Adobe
 
         public GraphEdge(GraphNode<T> sourceNode, GraphNode<T> destinationNode, int nodeWeight)
         {
-            this.SourceNode = sourceNode;
-            this.DestinationNode = destinationNode;
-            this.Weight = nodeWeight;
+            SourceNode = sourceNode;
+            DestinationNode = destinationNode;
+            Weight = nodeWeight;
         }
     }
 
@@ -40,17 +39,14 @@ namespace Adobe
     {
         // https://www.techiedelight.com/graph-implementation-java-using-collections/
         // https://codereview.stackexchange.com/questions/131583/generic-graph-implementation-in-c
-        public List<List<int>> adjList = new List<List<int>>();
-        private List<GraphNode<T>> vertices;
+        public List<List<GraphNode<T>>> adjList = new List<List<GraphNode<T>>>();
+        private readonly List<GraphNode<T>> vertices;
 
         public GraphWithAdjList(List<GraphEdge<T>> edgeList)
         {
             vertices = new List<GraphNode<T>>();
 
-            for (int index = 0; index < edgeList.Count; index++)
-            {
-                adjList.Add(new List<int>());
-            }
+            for (var index = 0; index < edgeList.Count; index++) adjList.Add(new List<GraphNode<T>>());
 
             foreach (var edge in edgeList)
             {
@@ -59,32 +55,35 @@ namespace Adobe
                 if (!vertices.Contains(edge.DestinationNode))
                     vertices.Add(edge.DestinationNode);
 
-                adjList[edge.SourceNode.Index].Add(edge.DestinationNode.Index);
+                adjList[edge.SourceNode.Index].Add(edge.DestinationNode);
                 // For undirected graph we can also edge from dest to src
-                adjList[edge.DestinationNode.Index].Add(edge.SourceNode.Index);
+                adjList[edge.DestinationNode.Index].Add(edge.SourceNode);
             }
         }
 
         public bool IsAdjacentNodes(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode)
         {
-            return adjList[sourceGraphNode.Index].Contains(destinationGraphNode.Index);
+            return adjList[sourceGraphNode.Index].Contains(destinationGraphNode);
         }
 
-        // public int GetEdgeDistance(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode)
-        // {
-        //     if (!IsAdjacentNodes(sourceGraphNode, destinationGraphNode))
-        //         return -1;
-        //
-        //     return 0;
-        // }
+        public int GetEdgeDistance(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode)
+        {
+            if (!IsAdjacentNodes(sourceGraphNode, destinationGraphNode))
+                return -1;
+
+            return adjList[sourceGraphNode.Index].Where(x => x.Index.Equals(destinationGraphNode.Index))
+                .FirstOrDefault().NodeWeight;
+        }
     }
 
     public class GraphWithAdjMatrix<T>
     {
+        private readonly int[,] adjMatrix;
+
+        private readonly int graphSize = 5;
+
         //https://simpledevcode.wordpress.com/2015/12/22/graphs-and-dijkstras-algorithm-c/
-        private List<GraphNode<T>> vertices;
-        private int graphSize = 5;
-        private int[,] adjMatrix;
+        private readonly List<GraphNode<T>> vertices;
 
         public GraphWithAdjMatrix(int graphSize)
         {
@@ -96,32 +95,22 @@ namespace Adobe
 
         public void AddEdge(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode, int distance)
         {
-            if (!vertices.Contains(sourceGraphNode))
-            {
-                vertices.Add(sourceGraphNode);
-            }
+            if (!vertices.Contains(sourceGraphNode)) vertices.Add(sourceGraphNode);
 
-            if (!vertices.Contains(destinationGraphNode))
-            {
-                vertices.Add(destinationGraphNode);
-            }
+            if (!vertices.Contains(destinationGraphNode)) vertices.Add(destinationGraphNode);
 
 
             // For Adj Matrix approach NodeWeight is used as index of item in matrix.
             if (sourceGraphNode.Index >= 0 && destinationGraphNode.Index >= 0 &&
-                sourceGraphNode.Index <= this.graphSize && sourceGraphNode.Index <= this.graphSize)
-            {
+                sourceGraphNode.Index <= graphSize && sourceGraphNode.Index <= graphSize)
                 adjMatrix[sourceGraphNode.Index, destinationGraphNode.Index] = distance;
-            }
         }
 
         public void RemoveEdge(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode)
         {
             if (sourceGraphNode.Index > 0 && destinationGraphNode.Index > 0 &&
-                sourceGraphNode.Index <= this.graphSize && sourceGraphNode.Index <= this.graphSize)
-            {
+                sourceGraphNode.Index <= graphSize && sourceGraphNode.Index <= graphSize)
                 adjMatrix[sourceGraphNode.Index, destinationGraphNode.Index] = 0;
-            }
         }
 
         public bool IsAdjacentNodes(GraphNode<T> sourceGraphNode, GraphNode<T> destinationGraphNode)
@@ -201,10 +190,7 @@ namespace Adobe
 
         private void AddToList(Vertex<T> vertex)
         {
-            if (!Vertices.Contains(vertex))
-            {
-                Vertices.Add(vertex);
-            }
+            if (!Vertices.Contains(vertex)) Vertices.Add(vertex);
         }
 
         private void AddNeighbors(Vertex<T> first, Vertex<T> second)
@@ -217,10 +203,7 @@ namespace Adobe
 
         private void AddNeighbor(Vertex<T> first, Vertex<T> second)
         {
-            if (!first.Neighbors.Contains(second))
-            {
-                first.AddEdge(second);
-            }
+            if (!first.Neighbors.Contains(second)) first.AddEdge(second);
         }
     }
 }
