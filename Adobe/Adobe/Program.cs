@@ -264,7 +264,11 @@
 
             //Trapped Water
             //Arrays.TrappedWater();
-            //Arrays.MaxContigiuosArray();
+           // Arrays.MaxContigiuosArray();
+           //Arrays.PositiveSubArraySum(new int[]{1,4,20,3,10}, 33);
+           //Arrays.PositiveSubArraySum(new int[]{1,4}, 0);
+           Arrays.CountTriplets(new int[]{1,5,3,2});
+           Arrays.CountTriplets(new int[]{3,2,7});
             // Arrays.RotateArray(new int[] {1, 3, 5, 4, 2}, 2);
             //Arrays.FindPairWithSumUsingSorting(new int[] {0, 1, 2, 3, 4, 5}, 5);
             // Search in sorted rotated array
@@ -281,9 +285,9 @@
             // Arrays.PairWithMaxProduct(new int[] {1, 4, 3, 6, 7, 0});
             // Arrays.PairWithMinProduct(new int[] {-1, -3, -4, 2, 0, -5});
             // Arrays.PairWithMaxProduct(new int[] {-1, -3, -4, 2, 0, -5});
-            Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
-            Arrays.MinProduct(new[] {-1, 2, -2, -8});
-            Arrays.MinProduct(new[] {1, 2, 3, 4});
+           // Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
+            //Arrays.MinProduct(new[] {-1, 2, -2, -8});
+           // Arrays.MinProduct(new[] {1, 2, 3, 4});
             /*
             // Stack
             
@@ -302,9 +306,8 @@
             */
 
             // Queue
-
-            var subcls = new SubClass();
-            subcls.BaseMethod("aa", "");
+            
+            
         }
     }
 }

@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Adobe
 {
@@ -178,7 +180,8 @@ namespace Adobe
             var strInput = Console.ReadLine().Split(" ");
             var inputArr = new int[strInput.Length];
 
-            for (var index = 0; index < strInput.Length; index++) inputArr[index] = int.Parse(strInput[index]);
+            for (var index = 0; index < strInput.Length; index++) 
+                inputArr[index] = int.Parse(strInput[index]);
 
             var maxValue = 0;
             var maxValueSoFar = 0;
@@ -194,6 +197,57 @@ namespace Adobe
             }
 
             Console.WriteLine(maxValueSoFar);
+        }
+
+        public static void CountTriplets(int[] inputArr)
+        {
+            List<int> sumList = new List<int>();
+            
+            for (int iIndex=0; iIndex < inputArr.Length;iIndex++)
+            {
+                for (int jIndex = iIndex+1; jIndex < inputArr.Length; jIndex++)
+                {
+                    int sum = inputArr[iIndex] + inputArr[jIndex];
+                    if(!sumList.Contains(sum))
+                         sumList.Add(sum);
+                }
+            }
+
+            int tripletCount = 0;
+            foreach (var element in inputArr)
+            {
+                if (sumList.Contains(element))
+                {
+                    tripletCount++;
+                }
+            }
+            
+            Console.WriteLine(tripletCount);
+        }
+
+        public static void PositiveSubArraySum(int[] inputArr, int sum)
+        {
+            int currentSum = inputArr[0],
+                start = 0,
+                index;
+            
+            for (index = 1; index <= inputArr.Length; index++)
+            {
+                while (currentSum > sum && start < index-1)  // If currentSum exceeds the sum, then remove the starting elements.
+                {
+                    currentSum -= inputArr[start];
+                    start++;
+                }
+
+                if (currentSum == sum)  // if sum found then print indexes
+                {
+                    int temp = index - 1;
+                    Console.WriteLine($"sum found between index {start} and {temp}");
+                }
+
+                if (index < inputArr.Length) // increment current sum for each element
+                    currentSum += inputArr[index];
+            }
         }
 
         public static int SearchInSortedRotatedArray(int[] inputArr, int key, int low, int high)
