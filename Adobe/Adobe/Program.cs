@@ -1,4 +1,7 @@
-﻿namespace Adobe
+﻿using System;
+using Adobe.Algorithms.Sorting;
+
+namespace Adobe
 {
     internal class Program
     {
@@ -264,11 +267,20 @@
 
             //Trapped Water
             //Arrays.TrappedWater();
-           // Arrays.MaxContigiuosArray();
-           //Arrays.PositiveSubArraySum(new int[]{1,4,20,3,10}, 33);
-           //Arrays.PositiveSubArraySum(new int[]{1,4}, 0);
-           Arrays.CountTriplets(new int[]{1,5,3,2});
-           Arrays.CountTriplets(new int[]{3,2,7});
+            // Arrays.MaxContigiuosArray(new int[] {1,2,3,-2,5});
+            //Arrays.MaxContigiuosArray(new int[] {0,0,0});
+            //Arrays.MaxContigiuosArray(new int[] {-7,-8,-3,-4});
+            // Arrays.MissingNumbers(new int[] {1,2,3,5});
+            // Arrays.MissingNumbers(new int[] {1,2,3,4,5,6,7,8,10});
+            // Arrays.MissingNumbers(new int[] {1,2,4,6,3,7,8});
+            // Arrays.MissingNumberWithSum(new int[] {1,2,3,5});
+            // Arrays.MissingNumberWithSum(new int[] {1,2,3,4,5,6,7,8,10});
+            // Arrays.MissingNumberWithSum(new int[] {1,2,4,6,3,7,8});
+            //Arrays.MergeTwoSortedArrays(new int[] {1, 5, 9, 10, 15, 20}, new int[] {2, 3, 8, 13});
+            //Arrays.PositiveSubArraySum(new int[]{1,4,20,3,10}, 33);
+            //Arrays.PositiveSubArraySum(new int[]{1,4}, 0);
+            // Arrays.CountTriplets(new int[]{1,5,3,2});
+            // Arrays.CountTriplets(new int[]{3,2,7});
             // Arrays.RotateArray(new int[] {1, 3, 5, 4, 2}, 2);
             //Arrays.FindPairWithSumUsingSorting(new int[] {0, 1, 2, 3, 4, 5}, 5);
             // Search in sorted rotated array
@@ -285,9 +297,9 @@
             // Arrays.PairWithMaxProduct(new int[] {1, 4, 3, 6, 7, 0});
             // Arrays.PairWithMinProduct(new int[] {-1, -3, -4, 2, 0, -5});
             // Arrays.PairWithMaxProduct(new int[] {-1, -3, -4, 2, 0, -5});
-           // Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
+            // Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
             //Arrays.MinProduct(new[] {-1, 2, -2, -8});
-           // Arrays.MinProduct(new[] {1, 2, 3, 4});
+            // Arrays.MinProduct(new[] {1, 2, 3, 4});
             /*
             // Stack
             
@@ -306,8 +318,30 @@
             */
 
             // Queue
+
+
+            // Algorithms
+
+            // Sorting
+
+            // Merge Sort - Divide and conquer and then merge sub arrays
+            int[] inputArr = new int[] {12, 11, 13, 5, 6, 7};
+            MergeSort.Sort(inputArr, 0, inputArr.Length - 1);
             
-            
+            Console.WriteLine("Merge sort :");
+            foreach (var element in inputArr)
+            {
+                Console.Write($"{element} ");
+            }
+
+            // Insertion Sort - compare with previous element till zeroth index
+            inputArr = new int[] {12, 11, 13, 5, 6, 7};
+            InsertionSort.Sort(inputArr, inputArr.Length );
+            Console.WriteLine("\nInsertion sort :");
+            foreach (var element in inputArr)
+            {
+                Console.Write($"{element} ");
+            }
         }
     }
 }

@@ -173,27 +173,29 @@ namespace Adobe
             Console.WriteLine($"Element Pair {minElement} and {nextMinElement}");
         }
 
-        public static void MaxContigiuosArray()
+        public static void MaxContigiuosArray(int[] inputArr)
         {
-            Console.WriteLine("Enter array element : ");
+            /* Console.WriteLine("Enter array element : ");
+ 
+             var strInput = Console.ReadLine().Split(" ");
+             var inputArr = new int[strInput.Length];
+ 
+             for (var index = 0; index < strInput.Length; index++) 
+                 inputArr[index] = int.Parse(strInput[index]);
+                 */
 
-            var strInput = Console.ReadLine().Split(" ");
-            var inputArr = new int[strInput.Length];
-
-            for (var index = 0; index < strInput.Length; index++) 
-                inputArr[index] = int.Parse(strInput[index]);
-
-            var maxValue = 0;
-            var maxValueSoFar = 0;
+            int maxValueSoFar = int.MinValue,
+                maxEndingHere = 0;
 
             foreach (var item in inputArr)
             {
-                maxValue += item;
+                maxEndingHere += item;
 
-                if (maxValue < 0)
-                    maxValue = 0;
-                else if (maxValueSoFar < maxValue)
-                    maxValueSoFar = maxValue;
+                if (maxValueSoFar < maxEndingHere)
+                    maxValueSoFar = maxEndingHere;
+
+                if (maxEndingHere < 0)
+                    maxEndingHere = 0;
             }
 
             Console.WriteLine(maxValueSoFar);
@@ -202,14 +204,14 @@ namespace Adobe
         public static void CountTriplets(int[] inputArr)
         {
             List<int> sumList = new List<int>();
-            
-            for (int iIndex=0; iIndex < inputArr.Length;iIndex++)
+
+            for (int iIndex = 0; iIndex < inputArr.Length; iIndex++)
             {
-                for (int jIndex = iIndex+1; jIndex < inputArr.Length; jIndex++)
+                for (int jIndex = iIndex + 1; jIndex < inputArr.Length; jIndex++)
                 {
                     int sum = inputArr[iIndex] + inputArr[jIndex];
-                    if(!sumList.Contains(sum))
-                         sumList.Add(sum);
+                    if (!sumList.Contains(sum))
+                        sumList.Add(sum);
                 }
             }
 
@@ -221,25 +223,53 @@ namespace Adobe
                     tripletCount++;
                 }
             }
-            
+
             Console.WriteLine(tripletCount);
         }
+
+        public static void MissingNumbers(int[] inputArr) // ONly works for sorted array
+        {
+            Array.Sort(inputArr); // If need for unsorted array uncomment this. 
+            for (int index = 0; index < inputArr.Length; index++)
+            {
+                if ((index + 1) != inputArr[index])
+                {
+                    Console.WriteLine($"Missing number is {index + 1}");
+                    break;
+                }
+            }
+        }
+
+        public static void MissingNumberWithSum(int[] inputArr)
+        {
+            int numberCount = inputArr.Length;
+            int sum = ((numberCount + 1) * (numberCount + 2)) / 2;
+
+            for (int index = 0; index < numberCount; index++)
+            {
+                sum -= inputArr[index];
+            }
+
+            Console.WriteLine(sum);
+        }
+
 
         public static void PositiveSubArraySum(int[] inputArr, int sum)
         {
             int currentSum = inputArr[0],
                 start = 0,
                 index;
-            
+
             for (index = 1; index <= inputArr.Length; index++)
             {
-                while (currentSum > sum && start < index-1)  // If currentSum exceeds the sum, then remove the starting elements.
+                while (currentSum > sum && start < index - 1
+                ) // If currentSum exceeds the sum, then remove the starting elements.
                 {
                     currentSum -= inputArr[start];
                     start++;
                 }
 
-                if (currentSum == sum)  // if sum found then print indexes
+                if (currentSum == sum) // if sum found then print indexes
                 {
                     int temp = index - 1;
                     Console.WriteLine($"sum found between index {start} and {temp}");
@@ -370,6 +400,28 @@ namespace Adobe
             }
 
             Console.WriteLine(unitOfTime + callingOrderArray.Length);
+        }
+
+        // Copied not done self- need to understand.
+        // https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
+        //https://www.geeksforgeeks.org/efficiently-merging-two-sorted-arrays-with-o1-extra-space/
+        public static void MergeTwoSortedArrays(int[] firstInputArr, int[] secondInputArr)
+        {
+            for (int index = secondInputArr.Length - 1; index >= 0; index--)
+            {
+                int lastElement = firstInputArr[^1];
+                int jIndex;
+                for (jIndex = firstInputArr.Length - 2; firstInputArr[jIndex] > secondInputArr[index]; jIndex--)
+                {
+                    firstInputArr[jIndex + 1] = firstInputArr[jIndex];
+                }
+
+                if (jIndex != firstInputArr.Length - 2 || lastElement > secondInputArr[index])
+                {
+                    firstInputArr[jIndex + 1] = secondInputArr[index];
+                    secondInputArr[index] = lastElement;
+                }
+            }
         }
     }
 }
