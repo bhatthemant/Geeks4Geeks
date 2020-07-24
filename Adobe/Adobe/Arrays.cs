@@ -423,5 +423,30 @@ namespace Adobe
                 }
             }
         }
+
+        public static void ReArrangeAlternatively(int[] inputArr)
+        {
+            int[] tempArr = new int[inputArr.Length];
+            int forwardIndex = 0, backwardIndex = inputArr.Length - 1;
+            bool flag = true;
+            for (int index = 0; index < inputArr.Length; index++)
+            {
+                if (flag)
+                {
+                    tempArr[index] = inputArr[backwardIndex--];
+                }
+                else
+                {
+                    tempArr[index] = inputArr[forwardIndex++];
+                }
+
+                flag = !flag;
+            }
+
+            foreach (var element in tempArr)
+            {
+                Console.Write($"{element} ");
+            }
+        }
     }
 }

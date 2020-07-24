@@ -273,6 +273,8 @@ namespace Adobe
             // Arrays.MissingNumbers(new int[] {1,2,3,5});
             // Arrays.MissingNumbers(new int[] {1,2,3,4,5,6,7,8,10});
             // Arrays.MissingNumbers(new int[] {1,2,4,6,3,7,8});
+           // Arrays.ReArrangeAlternatively(new int[] {1, 2,3, 4, 5, 6});
+            Arrays.ReArrangeAlternatively(new int[] {1, 2, 3, 4, 5, 6, 7});
             // Arrays.MissingNumberWithSum(new int[] {1,2,3,5});
             // Arrays.MissingNumberWithSum(new int[] {1,2,3,4,5,6,7,8,10});
             // Arrays.MissingNumberWithSum(new int[] {1,2,4,6,3,7,8});
