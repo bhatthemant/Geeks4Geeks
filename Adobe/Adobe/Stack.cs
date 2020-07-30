@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace Adobe
 {
@@ -139,6 +140,53 @@ namespace Adobe
             }
         }
     }
-    
-    
+
+    public static class StackHelper
+    {
+        public static void BalancedParenthesis(string inputString)
+        {
+            char[] inputChars = inputString.ToCharArray();
+            Stack<char> charStack = new Stack<char>();
+            bool isParenthesisBalanced = true;
+            foreach (char inputChar in inputChars)
+            {
+                if (inputChar == '{' || inputChar == '[' || inputChar == '(')
+                    charStack.Push(inputChar);
+
+                if (inputChar == '}' || inputChar == ']' || inputChar == ')')
+                {
+                    if (charStack.IsEmpty)
+                    {
+                        isParenthesisBalanced = false;
+                        break;
+                    }
+                    else if (!IsMatchingPair(charStack.Pop(), inputChar))
+                    {
+                        isParenthesisBalanced = false;
+                        break;
+                    }
+                }
+            }
+
+            if (!charStack.IsEmpty)
+                isParenthesisBalanced = false;
+                
+            if(isParenthesisBalanced)
+                Console.WriteLine("Parenthesis are Balanced");
+            else
+                Console.WriteLine("Parenthesis are not Balanced");
+        }
+
+        private static bool IsMatchingPair(char matchingChar, char inputChar)
+        {
+            if (matchingChar == '{' && inputChar == '}')
+                return true;
+            if (matchingChar == '(' && inputChar == ')')
+                return true;
+            if (matchingChar == '[' && inputChar == ']')
+                return true;
+
+            return false;
+        }
+    }
 }

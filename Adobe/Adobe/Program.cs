@@ -318,19 +318,26 @@ namespace Adobe
             //   Console.WriteLine(objStack.Peek());
             //   objStack.Push(4);
 
-            StackMin objStack = new StackMin();
-            objStack.Push(2);
-            objStack.Push(3);
-            //Console.WriteLine($"Min element : {objStack.GetMin()}");
-            
+            // StackMin objStack = new StackMin();
+            // objStack.Push(2);
+            // objStack.Push(3);
+            // //Console.WriteLine($"Min element : {objStack.GetMin()}");
             //
-            objStack.Pop();
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
-            objStack.Push(1);
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
-            //objStack.Pop();
-            //objStack.Push(4);
-            //Console.WriteLine($"Min element : {objStack.GetMin()}");
+            // //
+            // objStack.Pop();
+            // Console.WriteLine($"Min element : {objStack.GetMin()}");
+            // objStack.Push(1);
+            // Console.WriteLine($"Min element : {objStack.GetMin()}");
+            // //objStack.Pop();
+            // //objStack.Push(4);
+            // //Console.WriteLine($"Min element : {objStack.GetMin()}");
+
+            StackHelper.BalancedParenthesis("{([])}");
+            StackHelper.BalancedParenthesis("()");
+            StackHelper.BalancedParenthesis("([]");
+            StackHelper.BalancedParenthesis("[()]{}{[()()]()}");
+            StackHelper.BalancedParenthesis("[(])");
+
 
             //  */
 
