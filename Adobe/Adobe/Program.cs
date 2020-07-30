@@ -273,8 +273,8 @@ namespace Adobe
             // Arrays.MissingNumbers(new int[] {1,2,3,5});
             // Arrays.MissingNumbers(new int[] {1,2,3,4,5,6,7,8,10});
             // Arrays.MissingNumbers(new int[] {1,2,4,6,3,7,8});
-           // Arrays.ReArrangeAlternatively(new int[] {1, 2,3, 4, 5, 6});
-            Arrays.ReArrangeAlternatively(new int[] {1, 2, 3, 4, 5, 6, 7});
+            // Arrays.ReArrangeAlternatively(new int[] {1, 2,3, 4, 5, 6});
+            //Arrays.ReArrangeAlternatively(new int[] {1, 2, 3, 4, 5, 6, 7});
             // Arrays.MissingNumberWithSum(new int[] {1,2,3,5});
             // Arrays.MissingNumberWithSum(new int[] {1,2,3,4,5,6,7,8,10});
             // Arrays.MissingNumberWithSum(new int[] {1,2,4,6,3,7,8});
@@ -294,7 +294,7 @@ namespace Adobe
             // Arrays.PairWithMinProduct(new int[] {11, 8, 5, 7, 5, 100});
             // Arrays.PairWithMaxProduct(new int[] {11, 8, 5, 7, 5, 100});
             // Arrays.PairWithMinProduct(new int[] {198, 76, 544, 123, 154, 675});
-            // Arrays.PairWithMaxProduct(new int[] {198, 76, 544, 123, 154, 675});
+            //Arrays.PairWithMaxProduct(new int[] {198, 76, 544, 123, 154, 675});
             // Arrays.PairWithMinProduct(new int[] {1, 4, 3, 6, 7, 0});
             // Arrays.PairWithMaxProduct(new int[] {1, 4, 3, 6, 7, 0});
             // Arrays.PairWithMinProduct(new int[] {-1, -3, -4, 2, 0, -5});
@@ -302,22 +302,37 @@ namespace Adobe
             // Arrays.MinProduct(new[] {0, 1, 2, 3, 4});
             //Arrays.MinProduct(new[] {-1, 2, -2, -8});
             // Arrays.MinProduct(new[] {1, 2, 3, 4});
-            /*
+
+            // /*
             // Stack
-            
+
             // Find min element with O(1)
-            Stack objStack = new Stack();
+            //   Stack<int> objStack = new Stack<int>();
+            //   objStack.Push(2);
+            //   objStack.Push(-1);
+            //   objStack.Push(-3);
+            //   Console.WriteLine(objStack.Peek());
+            //   objStack.Pop();
+            //   Console.WriteLine(objStack.Peek());
+            //   objStack.Pop();
+            //   Console.WriteLine(objStack.Peek());
+            //   objStack.Push(4);
+
+            StackMin objStack = new StackMin();
             objStack.Push(2);
-            objStack.Push(-1);
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
-            objStack.Push(-3);
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
-            objStack.Pop();
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
-            objStack.Pop();
-            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            objStack.Push(3);
+            //Console.WriteLine($"Min element : {objStack.GetMin()}");
             
-            */
+            //
+            objStack.Pop();
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            objStack.Push(1);
+            Console.WriteLine($"Min element : {objStack.GetMin()}");
+            //objStack.Pop();
+            //objStack.Push(4);
+            //Console.WriteLine($"Min element : {objStack.GetMin()}");
+
+            //  */
 
             // Queue
 
@@ -327,7 +342,10 @@ namespace Adobe
             // Sorting
 
             // Merge Sort - Divide and conquer and then merge sub arrays
-            int[] inputArr = new int[] {12, 11, 13, 5, 6, 7};
+
+            /*
+             int[] inputArr = new int[] {12, 11, 13, 5, 6, 7};
+             
             MergeSort.Sort(inputArr, 0, inputArr.Length - 1);
             
             Console.WriteLine("Merge sort :");
@@ -336,7 +354,12 @@ namespace Adobe
                 Console.Write($"{element} ");
             }
 
+            */
+
+
             // Insertion Sort - compare with previous element till zeroth index
+
+            /*
             inputArr = new int[] {12, 11, 13, 5, 6, 7};
             InsertionSort.Sort(inputArr, inputArr.Length );
             Console.WriteLine("\nInsertion sort :");
@@ -344,6 +367,7 @@ namespace Adobe
             {
                 Console.Write($"{element} ");
             }
+            */
         }
     }
 }
