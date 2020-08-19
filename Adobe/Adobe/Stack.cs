@@ -1,5 +1,7 @@
 using System;
+using System.Net.Http.Headers;
 using System.Threading;
+using System.Xml;
 
 namespace Adobe
 {
@@ -170,8 +172,8 @@ namespace Adobe
 
             if (!charStack.IsEmpty)
                 isParenthesisBalanced = false;
-                
-            if(isParenthesisBalanced)
+
+            if (isParenthesisBalanced)
                 Console.WriteLine("Parenthesis are Balanced");
             else
                 Console.WriteLine("Parenthesis are not Balanced");
@@ -187,6 +189,34 @@ namespace Adobe
                 return true;
 
             return false;
+        }
+    }
+
+    public class QueueUsingStack
+    {
+        private Stack<int> internalPushStack = new Stack<int>();
+        private Stack<int> internalPopStack = new Stack<int>();
+
+        public void Enqueue(int val)
+        {
+            internalPushStack.Push(val);
+        }
+
+        public int Dequeue()
+        {
+            while (!internalPushStack.IsEmpty)
+            {
+                internalPopStack.Push(internalPushStack.Pop());
+            }
+
+            int returnValue = internalPopStack.Pop();
+
+            while (!internalPopStack.IsEmpty)
+            {
+                internalPushStack.Push(internalPopStack.Pop());
+            }
+
+            return returnValue;
         }
     }
 }

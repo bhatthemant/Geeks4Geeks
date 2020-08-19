@@ -156,21 +156,19 @@ namespace Adobe
 
         public static void PairWithMaxProduct(int[] inputArr)
         {
-            var minElement = Math.Max(inputArr[0], inputArr[1]);
-            var nextMinElement = Math.Max(inputArr[0], inputArr[1]);
+            var maxElement = Math.Max(inputArr[0], inputArr[1]);
+            int nextMaxElement = Math.Min(inputArr[0], inputArr[1]);
 
-            for (var index = 2; index < inputArr.Length; index++)
-                if (inputArr[index] > minElement)
+            for (int index = 2; index < inputArr.Length; index++)
+            {
+                if (maxElement < inputArr[index])
                 {
-                    nextMinElement = minElement;
-                    minElement = inputArr[index];
+                    nextMaxElement = maxElement;
+                    maxElement = inputArr[index];
                 }
-                else if (inputArr[index] > nextMinElement)
-                {
-                    nextMinElement = inputArr[index];
-                }
+            }
 
-            Console.WriteLine($"Element Pair {minElement} and {nextMinElement}");
+            Console.WriteLine(maxElement * nextMaxElement);
         }
 
         public static void MaxContigiuosArray(int[] inputArr)

@@ -13,11 +13,6 @@ namespace Adobe
     {
         public Node Head;
 
-        public LinkedList()
-        {
-            // Head = new Node();
-        }
-
         public void AddFirst(object data)
         {
             Head = new Node {Data = data, Next = null};
@@ -37,7 +32,7 @@ namespace Adobe
 
         public void TraverseAll()
         {
-            Node currenNode = Head;
+            var currenNode = Head;
             while (currenNode != null)
             {
                 Console.WriteLine(currenNode.Data);
@@ -53,7 +48,7 @@ namespace Adobe
                 return;
             }
 
-            Node currenNode = Head;
+            var currenNode = Head;
             Node prevNode = null;
             while (currenNode != null)
             {
@@ -73,7 +68,7 @@ namespace Adobe
             if (headNode == null)
                 return null;
 
-            HashSet<Node> visitedNodes = new HashSet<Node>();
+            var visitedNodes = new HashSet<Node>();
             while (headNode.Next != null)
             {
                 if (visitedNodes.Contains(headNode))
@@ -91,18 +86,15 @@ namespace Adobe
             if (headNode == null)
                 return null;
 
-            Node fastNode = headNode;
-            Node slowNode = headNode;
+            var fastNode = headNode;
+            var slowNode = headNode;
 
             while (fastNode != null && slowNode != null && fastNode.Next != null)
             {
                 fastNode = fastNode.Next.Next;
                 slowNode = slowNode.Next;
 
-                if (fastNode == slowNode)
-                {
-                    return slowNode;
-                }
+                if (fastNode == slowNode) return slowNode;
             }
 
             return null;
@@ -110,7 +102,7 @@ namespace Adobe
 
         public static void RemoveCycle(Node headNode)
         {
-            Node cycleNode = DetectLoopWithHash(headNode);
+            var cycleNode = DetectLoopWithHash(headNode);
             if (cycleNode != null)
                 cycleNode.Next = null;
         }
@@ -120,8 +112,8 @@ namespace Adobe
             if (headNode == null)
                 return int.MinValue;
 
-            Node tempNode = headNode;
-            int counter = 0;
+            var tempNode = headNode;
+            var counter = 0;
 
             while (tempNode != null)
             {
@@ -129,7 +121,7 @@ namespace Adobe
                 tempNode = tempNode.Next;
             }
 
-            int mid = 0;
+            var mid = 0;
             while (mid < counter / 2)
             {
                 mid++;
@@ -144,8 +136,8 @@ namespace Adobe
             if (headNode == null)
                 return int.MinValue;
 
-            Node fastNode = headNode;
-            Node slowNode = headNode;
+            var fastNode = headNode;
+            var slowNode = headNode;
 
             while (fastNode != null && fastNode.Next != null)
             {
@@ -161,15 +153,12 @@ namespace Adobe
             if (headNode == null)
                 return int.MinValue;
 
-            Node tempNode = headNode;
-            int counter = 0;
+            var tempNode = headNode;
+            var counter = 0;
 
             while (headNode != null)
             {
-                if (counter % 2 > 0)
-                {
-                    tempNode = tempNode.Next;
-                }
+                if (counter % 2 > 0) tempNode = tempNode.Next;
 
                 counter++;
                 headNode = headNode.Next;
@@ -183,14 +172,14 @@ namespace Adobe
             if (headNode == null)
                 return;
 
-            LinkedList reversedList = new LinkedList();
+            var reversedList = new LinkedList();
             while (headNode != null)
             {
                 reversedList.InsertAtFront(headNode.Data);
                 headNode = headNode.Next;
             }
 
-            Node reversedHead = reversedList.Head;
+            var reversedHead = reversedList.Head;
             while (reversedHead != null)
             {
                 Console.WriteLine(reversedHead.Data);
@@ -223,8 +212,8 @@ namespace Adobe
 
         public static bool IsPalindrome(Node headNode)
         {
-            Queue<Node> nodeQueue = new Queue<Node>();
-            Stack<Node> nodeStack = new Stack<Node>();
+            var nodeQueue = new Queue<Node>();
+            var nodeStack = new Stack<Node>();
             while (headNode != null)
             {
                 nodeQueue.Enqueue(headNode);
@@ -233,19 +222,17 @@ namespace Adobe
             }
 
             while (nodeQueue.Count > 0)
-            {
                 if ((int) nodeQueue.Dequeue().Data != (int) nodeStack.Pop().Data)
                     return false;
-            }
 
             return true;
         }
 
         public static Node NthNodeFromEndDoubleIteration(Node headNode, int indexFromLast)
         {
-            int nodeCount = 0;
-            Node tempNode = headNode;
-            Node secondNode = headNode;
+            var nodeCount = 0;
+            var tempNode = headNode;
+            var secondNode = headNode;
 
             while (tempNode != null)
             {
@@ -256,10 +243,7 @@ namespace Adobe
             if (nodeCount < indexFromLast)
                 return null;
 
-            for (int index = 0; index < nodeCount - indexFromLast; index++)
-            {
-                secondNode = secondNode.Next;
-            }
+            for (var index = 0; index < nodeCount - indexFromLast; index++) secondNode = secondNode.Next;
 
             return secondNode;
         }
@@ -267,7 +251,7 @@ namespace Adobe
         public static Node NthNodeFromEndSingleIteration(Node headNode, int indexFromLast)
         {
             Node tempNode = headNode, secondNode = headNode;
-            for (int index = 1; index <= indexFromLast - 1; index++)
+            for (var index = 1; index <= indexFromLast - 1; index++)
             {
                 tempNode = tempNode.Next;
                 if (tempNode == null)
@@ -291,15 +275,12 @@ namespace Adobe
 
         public static Node RotateLinkedList(Node headNode, int step)
         {
-            Node endNode = headNode;
-            while (endNode.Next != null)
-            {
-                endNode = endNode.Next;
-            }
+            var endNode = headNode;
+            while (endNode.Next != null) endNode = endNode.Next;
 
-            for (int index = 0; index < step; index++)
+            for (var index = 0; index < step; index++)
             {
-                Node tempNode = headNode;
+                var tempNode = headNode;
                 headNode = headNode.Next;
                 tempNode.Next = null;
                 endNode.Next = tempNode;
