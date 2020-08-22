@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Transactions;
 using Adobe.Algorithms.Sorting;
 
 namespace Adobe
@@ -290,7 +291,7 @@ namespace Adobe
             //     $"Array element 3 found at {Arrays.SearchInSortedRotatedArray(new int[] {1, 2, 7, 3, 4}, 3, 0, 5)}");
 
             //Arrays.MonkAndPowerOfTime(new int[] {3, 2, 1}, new int[] {1, 3, 2});
-            Arrays.DuplicateElements(new int[] {5, 3, 1, 3, 5, 5});
+            // Arrays.DuplicateElements(new int[] {5, 3, 1, 3, 5, 5});
             // Arrays.PairWithMinProduct(new int[] {11, 8, 5, 7, 5, 100});
             // Arrays.PairWithMaxProduct(new int[] {11, 8, 5, 7, 5, 100});
             // Arrays.PairWithMinProduct(new int[] {198, 76, 544, 123, 154, 675});
@@ -338,33 +339,33 @@ namespace Adobe
             // StackHelper.BalancedParenthesis("[()]{}{[()()]()}");
             // StackHelper.BalancedParenthesis("[(])");
 
-            QueueUsingStack objQueue = new QueueUsingStack();
-            objQueue.Enqueue(1);
-            objQueue.Enqueue(2);
-            objQueue.Enqueue(3);
-            objQueue.Enqueue(4);
-            objQueue.Enqueue(5);
-            
-            Console.WriteLine(objQueue.Dequeue());
-            Console.WriteLine(objQueue.Dequeue());
-            Console.WriteLine(objQueue.Dequeue());
-            Console.WriteLine(objQueue.Dequeue());
-            Console.WriteLine(objQueue.Dequeue());
+            //QueueUsingStack objQueue = new QueueUsingStack();
+            //objQueue.Enqueue(1);
+            //objQueue.Enqueue(2);
+            //objQueue.Enqueue(3);
+            //objQueue.Enqueue(4);
+            //objQueue.Enqueue(5);
+
+            //Console.WriteLine(objQueue.Dequeue());
+            //Console.WriteLine(objQueue.Dequeue());
+            //Console.WriteLine(objQueue.Dequeue());
+            //Console.WriteLine(objQueue.Dequeue());
+            //Console.WriteLine(objQueue.Dequeue());
 
             //  */
 
             // Queue
 
-            GenericQueue<int> queue = new GenericQueue<int>();
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
-            
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
+            //GenericQueue<int> queue = new GenericQueue<int>();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
+
+            //Console.WriteLine(queue.Dequeue());
+            //Console.WriteLine(queue.Dequeue());
+            //Console.WriteLine(queue.Dequeue());
+            //Console.WriteLine(queue.Dequeue());
 
             // Algorithms
 
@@ -397,6 +398,11 @@ namespace Adobe
                 Console.Write($"{element} ");
             }
             */
+
+            // Strings
+
+            Console.WriteLine("Enter strings with O and 1 only.");
+            Strings.LastIndexOfOne(Console.ReadLine());
         }
     }
 }
