@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace Adobe
 {
@@ -251,7 +250,6 @@ namespace Adobe
             Console.WriteLine(sum);
         }
 
-
         public static void PositiveSubArraySum(int[] inputArr, int sum)
         {
             int currentSum = inputArr[0],
@@ -445,6 +443,31 @@ namespace Adobe
             {
                 Console.Write($"{element} ");
             }
+        }
+
+        public static void LargestNumber(int[] inputArr)
+        {
+            string outPut = string.Empty;
+            List<string> inputStr = inputArr.ToList().ConvertAll<string>(delegate (int i) { return i.ToString(); });
+            inputStr.Sort(Compare);
+
+            for (int index = 0; index < inputArr.Length; index++)
+            {
+                outPut += inputStr[index]; 
+            }
+
+            if (outPut[0] == '0' && outPut.Length > 1)
+                Console.Write("0");
+
+            Console.WriteLine(outPut);
+        }
+
+        private static int Compare(string X, string Y)
+        {
+            string XY = X + Y;
+            string YX = Y + X;
+
+            return XY.CompareTo(YX) > 0 ? -1 : 1;
         }
     }
 }

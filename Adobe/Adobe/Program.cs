@@ -304,6 +304,11 @@ namespace Adobe
             //Arrays.MinProduct(new[] {-1, 2, -2, -8});
             // Arrays.MinProduct(new[] {1, 2, 3, 4});
 
+            Arrays.LargestNumber(new int[] { 00, 0 });
+            Arrays.LargestNumber(new int[] { 00, 60 });
+            Arrays.LargestNumber(new int[] { 54, 546, 548, 60 });
+            Arrays.LargestNumber(new int[] { 1, 34, 3, 98, 9, 76, 45, 4 });
+
             // /*
             // Stack
 
@@ -401,8 +406,8 @@ namespace Adobe
 
             // Strings
 
-            Console.WriteLine("Enter strings with O and 1 only.");
-            Strings.LastIndexOfOne(Console.ReadLine());
+            //Console.WriteLine("Enter strings with O and 1 only.");
+            //Strings.LastIndexOfOne(Console.ReadLine());
         }
     }
 }
