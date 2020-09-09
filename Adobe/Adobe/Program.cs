@@ -1,8 +1,4 @@
-﻿using System;
-using System.Transactions;
-using Adobe.Algorithms.Sorting;
-
-namespace Adobe
+﻿namespace Adobe
 {
     internal class Program
     {
@@ -304,10 +300,14 @@ namespace Adobe
             //Arrays.MinProduct(new[] {-1, 2, -2, -8});
             // Arrays.MinProduct(new[] {1, 2, 3, 4});
 
-            Arrays.LargestNumber(new int[] { 00, 0 });
-            Arrays.LargestNumber(new int[] { 00, 60 });
-            Arrays.LargestNumber(new int[] { 54, 546, 548, 60 });
-            Arrays.LargestNumber(new int[] { 1, 34, 3, 98, 9, 76, 45, 4 });
+            //Arrays.LargestNumber(new int[] { 00, 0 });
+            //Arrays.LargestNumber(new int[] { 00, 60 });
+            //Arrays.LargestNumber(new int[] { 54, 546, 548, 60 });
+            //Arrays.LargestNumber(new int[] { 1, 34, 3, 98, 9, 76, 45, 4 });
+
+            //Arrays.BuySellStock(new int[] { 100, 180, 260, 310, 40, 535, 695 });
+            Arrays.BuySellStock(new int[] { 100, 50, 30, 20 });
+            //Arrays.BuySellStock(new int[] { 23, 13, 25, 29, 33, 19, 34, 45, 65, 67 });
 
             // /*
             // Stack
@@ -408,6 +408,8 @@ namespace Adobe
 
             //Console.WriteLine("Enter strings with O and 1 only.");
             //Strings.LastIndexOfOne(Console.ReadLine());
+            Strings.GetmaxOccurenceOfString("aasghjhhk");
+
         }
     }
 }
