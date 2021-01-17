@@ -453,7 +453,7 @@ namespace Adobe
 
             for (int index = 0; index < inputArr.Length; index++)
             {
-                outPut += inputStr[index]; 
+                outPut += inputStr[index];
             }
 
             if (outPut[0] == '0' && outPut.Length > 1)
@@ -469,5 +469,95 @@ namespace Adobe
 
             return XY.CompareTo(YX) > 0 ? -1 : 1;
         }
+
+        //public static void BuySellStock(int[] inputArr)
+        //{
+        //    int buyDay = 0;
+        //    List<String> pairList = new List<string>();
+        //    //Dictionary<int, int> pair = new Dictionary<int, int>();
+        //    //pair.Add(buyDay, -1);
+        //    int profit = -1;
+
+        //    for (int index = 1; index < inputArr.Length; index++)
+        //    {
+        //        if (inputArr[buyDay] > inputArr[index])
+        //        {
+        //            pairList.Add($"({buyDay} {index - 1})");
+        //            buyDay = index;
+        //            profit = 0;
+        //            continue;
+        //        }
+        //        else
+        //        {
+        //            if (profit < (inputArr[index] - inputArr[buyDay]))
+        //            {
+        //                profit = inputArr[index] - inputArr[buyDay];
+        //                continue;
+        //            }
+        //            else
+        //            {
+        //                pairList.Add($"({buyDay} {index})");
+        //                profit = 0;
+        //                buyDay = index + 1;
+        //                index++;
+        //            }
+        //        }
+        //    }
+
+        //    if (pairList.Count > 0)
+        //    {
+        //        foreach (string str in pairList)
+        //        {
+        //            Console.WriteLine(str);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("No Profit");
+        //    }
+        //}
+        public static void BuySellStock(int[] inputArr)
+        {
+            int buyDay = 0;
+            List<String> pairList = new List<string>();
+            int profit = -1;
+
+            for (int index = 1; index < inputArr.Length; index++)
+            {
+                if (inputArr[buyDay] > inputArr[index])
+                {
+                    buyDay = index;
+                    continue;
+                }
+                else
+                {
+                    if (profit < (inputArr[index] - inputArr[buyDay]))
+                    {
+                        profit = inputArr[index] - inputArr[buyDay];
+                        continue;
+                    }
+                    else
+                    {
+                        pairList.Add($"({buyDay} {index})");
+                        profit = 0;
+                        buyDay = index + 1;
+                        index++;
+                    }
+                }
+            }
+
+            if (pairList.Count > 0)
+            {
+                foreach (string str in pairList)
+                {
+                    Console.WriteLine(str);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Profit");
+            }
+        }
+
     }
 }
