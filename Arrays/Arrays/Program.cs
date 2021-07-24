@@ -2,16 +2,16 @@
 
 namespace Arrays
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            LeftRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 7, 2);
-            LeftRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 9, 3);
-            JugglingAlgo(new ulong[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 9, 3);
+            LeftRotateArray(new[] {1, 2, 3, 4, 5, 6, 7}, 7, 2);
+            LeftRotateArray(new[] {1, 2, 3, 4, 5, 6, 7, 8, 9}, 9, 3);
+            JugglingAlgo(new ulong[] {1, 2, 3, 4, 5, 6, 7, 8, 9}, 9, 3);
 
-            Console.WriteLine(GCD(594, 216));/*(GCD(12, 30));*/
+            Console.WriteLine(GCD(594, 216)); /*(GCD(12, 30));*/
         }
 
         public static void JugglingAlgo(ulong[] arr, ulong size, ulong increment)
@@ -35,7 +35,7 @@ namespace Arrays
                 arr[startingIndex] = temp; // replace first element
             }
 
-            foreach (ulong item in arr)
+            foreach (var item in arr)
                 Console.WriteLine(item);
         }
 
@@ -43,7 +43,7 @@ namespace Arrays
         {
             // Time completexity - O(n)
 
-            for (int index = 0; index < size; index++)
+            for (var index = 0; index < size; index++)
             {
                 Console.WriteLine("index will be : " + (index + increment) % size);
                 Console.WriteLine(arr[(index + increment) % size]);
@@ -53,16 +53,10 @@ namespace Arrays
         public static ulong GCD(ulong a, ulong b)
         {
             while (a != 0 && b != 0)
-            {
                 if (a > b)
-                {
                     a %= b;
-                }
                 else
-                {
                     b %= a;
-                }
-            }
 
             return a == 0 ? b : a;
         }
