@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "DataStructure\Arrays\Arrays.csproj", "{03E097CF-9113-4A3C-A3BF-D719D52B0BC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "DataStructure\Trees\Trees.csproj", "{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adobe", "DataStructure\Adobe\Adobe.csproj", "{9AE548CE-881D-47C6-A46D-F6323C38C016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Algorithms\Sorting\Sorting.csproj", "{DBEB60C2-DCCB-4F03-89DE-564EA17059A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStructure", "{08457119-DA40-4DB7-9680-26C444D2DC48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{6B65A8BF-3D43-4997-9FDD-2EAA42F3043A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03E097CF-9113-4A3C-A3BF-D719D52B0BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E097CF-9113-4A3C-A3BF-D719D52B0BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E097CF-9113-4A3C-A3BF-D719D52B0BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E097CF-9113-4A3C-A3BF-D719D52B0BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE548CE-881D-47C6-A46D-F6323C38C016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE548CE-881D-47C6-A46D-F6323C38C016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE548CE-881D-47C6-A46D-F6323C38C016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE548CE-881D-47C6-A46D-F6323C38C016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03E097CF-9113-4A3C-A3BF-D719D52B0BC0} = {08457119-DA40-4DB7-9680-26C444D2DC48}
+		{57883DDF-AF9E-4D73-A251-8F75EB4DEAB2} = {08457119-DA40-4DB7-9680-26C444D2DC48}
+		{9AE548CE-881D-47C6-A46D-F6323C38C016} = {08457119-DA40-4DB7-9680-26C444D2DC48}
+		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3} = {6B65A8BF-3D43-4997-9FDD-2EAA42F3043A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC2AD92E-4662-4937-81A0-F8D94EA3B2FD}
+	EndGlobalSection
+EndGlobal
