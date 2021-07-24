@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Adobe/Adobe/obj
+/Arrays/.vs/Arrays
+/Arrays/Arrays/obj
+/Arrays/.vs/DataStructure
+/Arrays/Arrays/bin/Debug/netcoreapp2.2
+/Trees/Trees/obj
