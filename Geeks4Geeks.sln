@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStruct
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{6B65A8BF-3D43-4997-9FDD-2EAA42F3043A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching", "Algorithms\Searching\Searching\Searching.csproj", "{611BEE41-D805-43BC-915D-808438835EDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Searching", "Algorithms\Searching\Searching\Searching.csproj", "{611BEE41-D805-43BC-915D-808438835EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs", "DataStructure\Graphs\Graphs\Graphs.csproj", "{21D487E4-E93A-4E9C-ABB9-5F080D638D59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{611BEE41-D805-43BC-915D-808438835EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{611BEE41-D805-43BC-915D-808438835EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{611BEE41-D805-43BC-915D-808438835EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D487E4-E93A-4E9C-ABB9-5F080D638D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D487E4-E93A-4E9C-ABB9-5F080D638D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D487E4-E93A-4E9C-ABB9-5F080D638D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D487E4-E93A-4E9C-ABB9-5F080D638D59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{9AE548CE-881D-47C6-A46D-F6323C38C016} = {08457119-DA40-4DB7-9680-26C444D2DC48}
 		{DBEB60C2-DCCB-4F03-89DE-564EA17059A3} = {6B65A8BF-3D43-4997-9FDD-2EAA42F3043A}
 		{611BEE41-D805-43BC-915D-808438835EDE} = {6B65A8BF-3D43-4997-9FDD-2EAA42F3043A}
+		{21D487E4-E93A-4E9C-ABB9-5F080D638D59} = {08457119-DA40-4DB7-9680-26C444D2DC48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC2AD92E-4662-4937-81A0-F8D94EA3B2FD}
